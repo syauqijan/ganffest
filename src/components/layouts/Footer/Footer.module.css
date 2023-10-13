@@ -1,0 +1,20 @@
+.footer{
+    background-color: var(--tertiary);
+    color: var(--primary); /* Warna teks footer */
+    padding: 1rem; /* Ruang bawah dan atas di dalam footer */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Styling untuk teks di dalam footer */
+  .text-2xs {
+    font-size: 0.625rem; 
+    margin-bottom: 0.25rem; /* Ruang antara paragraf */
+  }
+  
+  .text-xs {
+    font-size: 0.75rem; 
+    margin-bottom: 0.25rem; 
+  }
+  

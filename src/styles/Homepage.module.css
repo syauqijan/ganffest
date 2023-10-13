@@ -1,0 +1,26 @@
+
+.homepage{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .header{
+    padding-top: 250px;
+    background-color: #222536;
+    color: var(--tertiary);
+    display: flex;
+    width : 100%;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .calling{
+    font-size: 3rem;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }

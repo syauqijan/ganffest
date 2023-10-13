@@ -1,0 +1,32 @@
+/* styles.module.css */
+.process-wrapper {
+    margin: auto;
+    max-width: 1080px;
+  }
+  
+  .step-inner {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 14px;
+  }
+  
+  .step.active,
+  .step:hover {
+    color: #444;
+  }
+  
+  .step.active:before,
+  .step:hover:before {
+    border: solid 2px #fff;
+    background: linear-gradient(to right, #e91e63 0%, #fff 100%);
+  }
+  
+  .step.active:after {
+    background: #207893;
+  }
+  
+  .step:hover:after {
+    background: #555;
+  }
+  

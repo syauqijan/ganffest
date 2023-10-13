@@ -1,0 +1,114 @@
+/* submissionpage.module.css */
+.container {
+    margin-top: 50px;
+    position: relative;
+    background: #222536;
+    border: 1px solid black;
+
+    font-family: Arial;
+    width: 100%;
+
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .myForm {
+    position: relative;
+    background: #222536;
+    width: 100%;
+    padding: 50px;
+  }
+  
+  .stepCounter {
+
+    top: 100px;
+    right: 35px;
+    color: #F9F6D5;
+    font-family: Futura Bk BT;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  
+  .header {
+    margin: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .headerForm{
+    margin: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1rem;
+    justify-content: center;
+    font-size: 44px;
+  }
+  
+  .title {
+    flex: 1;
+    font-size: 24px;
+    flex-direction: row;
+    display: flex;
+
+  }
+  .titleText{
+    margin-left: 10px;
+  }
+  .separator {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin-right: 40px;
+    margin-left: 40px;
+    
+
+  }
+  .buttonContainer {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: row;
+ /* Mengatur tata letak tombol "Next" ke kanan */
+    width: 100%; /* Menyebarkan tombol ke seluruh lebar form */
+    position: flex; /* Membuat tombol tetap di posisi */
+    bottom: 0; /* Menempatkan tombol di bagian bawah form */
+    left: 0; /* Menempatkan tombol di sisi kiri form */
+  }
+  .prevbutton{
+    background-color:var(--secondary);
+    color: #F9F6D5;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 120px;
+    
+  }
+  .nextbutton{
+    background-color:var(--secondary);
+    color: #F9F6D5;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 120px;
+    position: relative;
+
+  }
+  .nextbutton:hover, .prevbutton:hover{
+    background-color: #34465c;
+    transition: 0.3s;
+  }
+  /* Add more styles as needed */
+  
