@@ -14,14 +14,21 @@
     align-items: center;
     width: 100%;
 }
-
+.navPage{
+    color: var(--tertiary);
+    margin-left: 20px;
+    margin-right: 20px;
+}
 .button{
-    background-color: #4254a7;
-    color: rgb(241, 230, 209);
+    background: linear-gradient(to right, #F9F6D5 1%, #4863D8);
+    color: rgb(0, 0, 0);
     font-size: 14px;
     padding: 10px;
     border-radius: 10px;
     width: 80px;
+}
+.button p{
+    font-weight: bold;
 }
 .logo{
     height: 64px;

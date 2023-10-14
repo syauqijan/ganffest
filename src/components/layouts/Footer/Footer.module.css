@@ -1,10 +1,10 @@
-.footer{
+.footerContainer{
     background-color: var(--tertiary);
-    color: var(--primary); /* Warna teks footer */
-    padding: 1rem; /* Ruang bawah dan atas di dalam footer */
+    color: #222536;/* Warna teks footer */
+    padding: 1.2rem; /* Ruang bawah dan atas di dalam footer */
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
   }
   
   /* Styling untuk teks di dalam footer */
@@ -18,3 +18,25 @@
     margin-bottom: 0.25rem; 
   }
   
+  .contentScomed{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
+
+  .socmed{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    font-weight: bold;
+    color: #222536;
+  }
+.address{
+  font-size: 14px;
+}
+.title{
+  font-size:16px;
+  font-weight: bold;
+  
+}

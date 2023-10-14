@@ -49,7 +49,7 @@
     margin-bottom: 1rem;
     justify-content: center;
     font-size: 44px;
-    background: linear-gradient(to right, #F9F6D5, #4863D8);
+    background: linear-gradient(to right, #F9F6D5 , #4863D8);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
@@ -68,7 +68,7 @@
   .separator {
     border: none;
     height: 1px;
-    background-color: #ddd;
+    background: linear-gradient(to right, #F9F6D5, #4863D8);
     margin-bottom: 20px;
     
 

@@ -21,13 +21,13 @@ const Navbar = () => {
           
         </div>
         <div className={styles.contentNavbar}>
-        <Link  href="/" className={`text-tertiary mx-4 text-l ${isLinkActive('/')}`}>
+        <Link  href="/" className={styles.navPage}>
             Homepage
           </Link>
-          <Link href="/submission" className={`text-tertiary mx-4 text-l ${isLinkActive('/submission')}`}>
+          <Link href="/submission" className={styles.navPage}>
             Submission
           </Link>
-          <Link href="/about" className={`text-tertiary mx-4 text-l ${isLinkActive('/about')}`}>
+          <Link href="/about" className={styles.navPage}>
             About Us
           </Link>
           {/* <img src='@/usergff.png' alt="Logo Akun" className="w-14 h-14 mx-4" /> */}
@@ -36,7 +36,9 @@ const Navbar = () => {
               {data ? (
               <button className= {styles.button} onClick={() => signOut()}>Sign Out</button>
             ) : (
-              <button className= {styles.button} onClick={() => signIn()}>Sign In</button>
+              <button className= {styles.button} onClick={() => signIn()}>
+                <p>Sign In</p>
+              </button>
             )}
             </div>
         </div>

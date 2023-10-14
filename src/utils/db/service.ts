@@ -66,7 +66,7 @@ export async function signIn(userData : {email: string}){
     }
 }
 
-//make function to put data to database
+
 export async function createSubmissionData(
     formData : {
         judul_film: string;
