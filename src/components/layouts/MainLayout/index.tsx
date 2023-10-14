@@ -12,11 +12,21 @@ const MainLayout = (props: MainLayoutProps) => {
     const {pathname} = useRouter();
   
   return (
-    <main>
-        {!disableNavbars.includes(pathname) && <Navbar />}
-        {children}
+    
+      <div className='container'>
+        <div>
+          <main>
+            {!disableNavbars.includes(pathname) && <Navbar />}
+            {children}
+          
+          </main>
+        </div>
         <Footer />
-    </main>
+      </div>
+      
+      
+    
+    
   )
 }
 

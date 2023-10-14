@@ -36,6 +36,8 @@ export function FilmDataForm({
   return (
     <div className={styles.container}> 
     <div className={styles.inputContainer}>
+    <div className={styles.inputContainerFirst}>
+
       <label className={styles.label}>Judul Film</label>
       <input 
         autoFocus
@@ -45,15 +47,8 @@ export function FilmDataForm({
         onChange={(e) => updateFields({ judul_film: e.target.value })}
         className={styles.input}
       />
-      <label className={styles.label}>Bahasa</label>
-      <input
-        required
-        type="text"
-        value={bahasa}
-        onChange={(e) => updateFields({ bahasa: e.target.value })}
-          className={styles.input} 
-        />
-        <label className={styles.label}>Tahun</label>
+      
+        <label className={styles.label}>Tahun Produksi</label>
         <input
           required
           type="text"
@@ -61,7 +56,7 @@ export function FilmDataForm({
           onChange={(e) => updateFields({ tahun: e.target.value })}
           className={styles.input} 
       />
-      <label className={styles.label}>Kota</label>
+      <label className={styles.label}>Kota Produksi</label>
       <input
         required
         type="text"
@@ -69,27 +64,7 @@ export function FilmDataForm({
         onChange={(e) => updateFields({ kota: e.target.value })}
           className={styles.input} 
         />
-        <label className={styles.label}>Penghargaan</label>
-        <input
-          required
-          type="text"
-          value={penghargaan}
-          onChange={(e) => updateFields({ penghargaan: e.target.value })}
-          className={styles.input}
-        />
-        <label className={styles.label}>Festival</label>
-        <input
-          required
-          type="text"
-          value={festival}
-          onChange={(e) => updateFields({ festival: e.target.value })}
-          className={styles.input}
-        />
-        </div>
-        
-
-        <div className={styles.inputContainerTwo}>
-        <label className={styles.label}>Durasi</label>
+        <label className={styles.label}>Durasi Film</label>
         <input
           required
           type="text"
@@ -97,34 +72,42 @@ export function FilmDataForm({
           onChange={(e) => updateFields({ durasi: e.target.value})}
           className={styles.input}
         />
-        <label className={styles.label}>Link Film</label>
+        </div>
+        
+
+        <div className={styles.inputContainerTwo}>
+        <label className={styles.label}>Bahasa yang Digunakan dalam Film</label>
+      <input
+        required
+        type="text"
+        value={bahasa}
+        onChange={(e) => updateFields({ bahasa: e.target.value })}
+          className={styles.input} 
+        />
+        <label className={styles.label}>Festival Film yang Pernah Diikuti</label>
         <input
           required
           type="text"
-          value={link_film}
-          onChange={(e) => updateFields({ link_film: e.target.value })}
+          value={festival}
+          onChange={(e) => updateFields({ festival: e.target.value })}
           className={styles.input}
         />
-        <label className={styles.label}>Link Cover</label>
+        <label className={styles.label}>Penghargaan yang Diraih</label>
         <input
           required
           type="text"
-          value={link_cover}
-          onChange={(e) => updateFields({ link_cover: e.target.value })}
+          value={penghargaan}
+          onChange={(e) => updateFields({ penghargaan: e.target.value })}
           className={styles.input}
         />
-        <label className={styles.label}>Sinopsis</label>
-        <input
-          required
-          type="text"
-          value={sinopsis}
-          onChange={(e) => updateFields({ sinopsis: e.target.value })}
-          className={styles.input}
-        />
+        
+        
+        
         <label className={styles.label}>Audio</label>
         <div className={styles.radioButtons}>
-            <label>
+            <label className={styles.labelRadio} >
               <input
+                
                 type="radio"
                 value="Bersuara"
                 checked={suara === "Bersuara"}
@@ -132,8 +115,9 @@ export function FilmDataForm({
               />
               Bersuara
             </label>
-            <label>
+            <label className={styles.labelRadio}>
               <input
+              
                 type="radio"
                 value="Tidak Bersuara"
                 checked={suara === "Tidak Bersuara"}
@@ -142,8 +126,50 @@ export function FilmDataForm({
               Tidak Bersuara
             </label>
           </div>
+        </div>
+
+        
+        
 
         </div>
+        <div className={styles.inputContainerThree}>
+          <label className={styles.label}>Sinopsis</label>
+          <input
+            required
+            type="text"
+            value={sinopsis}
+            onChange={(e) => updateFields({ sinopsis: e.target.value })}
+            className={styles.input}
+          />
+        </div>
+        <div className={styles.inputContainerFour}>
+        <div className={styles.inputLink}>
+
+        <label className={styles.label}>Link Film</label>
+        <input
+          required
+          type="text"
+          value={link_film}
+          onChange={(e) => updateFields({ link_film: e.target.value })}
+          className={styles.input}
+        />
+        </div>
+        <div className={styles.inputLinkTwo}>
+
+        <label className={styles.label}>Link Cover</label>
+        <input
+          required
+          type="text"
+          value={link_cover}
+          onChange={(e) => updateFields({ link_cover: e.target.value })}
+          className={styles.input}
+        />
+        </div>
+
+        </div>
+
+
+        
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./MultiForm.module.css"; // Import CSS module
+import styles from "./ProductionHouse.module.css"; // Import CSS module
 
 type AccountData = {
   nama_produksi: string
@@ -43,7 +43,7 @@ export function ProductionHouseForm({
         onChange={(e) => updateFields({ alamat_produksi: e.target.value })}
         className={styles.input}
       />
-      <label className={styles.label}>No Telpon Produksi</label>
+      <label className={styles.label}>Nomor Telepon Produksi</label>
       <input
         required
         type="text"
@@ -62,7 +62,7 @@ export function ProductionHouseForm({
         className={styles.input}
       />
 
-      <label className={styles.label}>Nama Produser</label>
+      <label className={styles.label}>Nama Lengkap Produser</label>
       <input
         required
         type="text"
@@ -70,7 +70,7 @@ export function ProductionHouseForm({
         onChange={(e) => updateFields({ nama_produser: e.target.value })}
         className={styles.input}
       />
-      <label className={styles.label}>No Telpon Produser</label>
+      <label className={styles.label}>Nomor Telepon Produser</label>
       <input
         required
         type="text"

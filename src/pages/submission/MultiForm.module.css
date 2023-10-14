@@ -7,7 +7,7 @@
     min-height: 100vh; */
     padding: 1rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 1rem;
   }
   
@@ -25,13 +25,72 @@
   }
   .inputContainer {
     display: flex;
+    flex-direction: row; /* Setengah dari lebar container */
+    gap: 6rem;
+  }
+  .inputContainerFirst {
+    display: flex;
     flex-direction: column;
     width: 50%; /* Setengah dari lebar container */
+    gap: 0.5rem;
+
   }
   .inputContainerTwo {
     display: flex;
     flex-direction: column;
     width: 50%; /* Setengah dari lebar container */
+    gap: 0.5rem;
+
+  }
+  .inputContainerThree {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+  }
+  .inputContainerThree input {
+    height: 100px;
+
   }
   /* Add more styles as needed */
+  .radioButtons{
+    padding-top: 10px;
+
+
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .labelRadio:hover{
+    cursor: pointer;
+    color: #707aaa;
+    transition: .25s ease;
+  }
+  .labelRadio{
+    border-radius: 10px;
+  }
+  .inputContainerFour{
+    display: flex;
+    flex-direction: row; /* Setengah dari lebar container */
+    gap: 6rem;
+  }
+  .inputLinkTwo{
+    display: flex;
+    flex-direction: column;
+    width: 50%; /* Setengah dari lebar container */
+    gap: 0.5rem;
+
+  }
+  .inputLink{
+    display: flex;
+    flex-direction: column;
+    width: 50%; /* Setengah dari lebar container */
+    gap: 0.5rem;
+
+  }
+  .input [type="radio"]:checked  {
+    background: #ff0000;
+
+  }
+
   

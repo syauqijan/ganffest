@@ -1,13 +1,14 @@
+
 .box {
-    background-color: rgba(255, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
-    /* box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8); */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
     margin: auto auto;
     padding: 40px;
     position: absolute;
     top: 50%;
     left: 50%;
-    /* transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%);
 }
 
 .box h2 {

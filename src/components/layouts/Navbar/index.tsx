@@ -2,26 +2,32 @@ import React from 'react'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import styles from './Navbar.module.css'
 import Link from 'next/link'
+import { useRouter } from 'next/router';
+
 const Navbar = () => {
+  const router = useRouter(); // Dapatkan rute saat ini
     const { data } : any = useSession()
     console.log(data)
-
+    const isLinkActive = (href: string) => {
+      return router.asPath === href ? styles.boldLink : '';
+      console.log(router.asPath)
+    };
     return (
         <div className={styles.navbar}>
             
-            
-        <div className="m-4 mt-6 flex items-center">
-          <img src="/logo.png" alt="Logo" className="w-48 h-32-" />
+        <div className={styles.navbarContainer}>
+        <div className={styles.logo}>
+          <img src="/logo.png" alt="Logo" className={styles.logo} />
           
         </div>
-        <div className="m-4 flex items-center">
-        <Link  href="/" className="text-tertiary mx-4 text-l font-bold">
+        <div className={styles.contentNavbar}>
+        <Link  href="/" className={`text-tertiary mx-4 text-l ${isLinkActive('/')}`}>
             Homepage
           </Link>
-          <Link href="/submission" className="text-tertiary mx-4 text-l ">
+          <Link href="/submission" className={`text-tertiary mx-4 text-l ${isLinkActive('/submission')}`}>
             Submission
           </Link>
-          <Link href="/about" className="text-tertiary mx-4 text-l">
+          <Link href="/about" className={`text-tertiary mx-4 text-l ${isLinkActive('/about')}`}>
             About Us
           </Link>
           {/* <img src='@/usergff.png' alt="Logo Akun" className="w-14 h-14 mx-4" /> */}
@@ -36,6 +42,8 @@ const Navbar = () => {
         </div>
       
       </div>
+      </div>
+
     )
 }
 

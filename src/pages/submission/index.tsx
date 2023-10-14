@@ -141,7 +141,7 @@ const SubmissionPage = () => {
         <div className={styles.header}>
           <div className={styles.title}>
             <div className={styles.titleIcon}>
-            <img src="/data_img.png" alt="logo" className={styles.logo} />
+            <img src="/dataicon.svg" alt="logo" className={styles.logo} />
             </div>
             <div className={styles.titleText}>
             {currentStepIndex === 0 && <h1>Film Data</h1>}

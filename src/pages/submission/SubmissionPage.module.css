@@ -1,8 +1,6 @@
 /* submissionpage.module.css */
 .container {
-    margin-top: 50px;
     position: relative;
-    background: #222536;
     border: 1px solid black;
 
     font-family: Arial;
@@ -11,13 +9,15 @@
     align-items: center;
     justify-content: center;
     display: flex;
+    padding-bottom: 50px;
   }
   
   .myForm {
     position: relative;
-    background: #222536;
     width: 100%;
-    padding: 50px;
+    padding-left: 150px;
+    padding-right: 150px;
+
   }
   
   .stepCounter {
@@ -34,7 +34,7 @@
   
   
   .header {
-    margin: 40px;
+    margin: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -49,6 +49,9 @@
     margin-bottom: 1rem;
     justify-content: center;
     font-size: 44px;
+    background: linear-gradient(to right, #F9F6D5, #4863D8);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
   }
   
   .title {
@@ -58,31 +61,31 @@
     display: flex;
 
   }
-  .titleText{
+  .titleText h1 {
     margin-left: 10px;
+  
   }
   .separator {
     border: none;
     height: 1px;
     background-color: #ddd;
-    margin-right: 40px;
-    margin-left: 40px;
+    margin-bottom: 20px;
     
 
   }
   .buttonContainer {
+    padding: 15px;
     margin-top: 1rem;
     display: flex;
-    gap: 0.5rem;
-    flex-direction: row;
- /* Mengatur tata letak tombol "Next" ke kanan */
+    justify-content: space-between; /* Menggunakan justify-content untuk menjaga tombol di ujung kiri dan kanan */
+    align-items: center; /* Pusatkan tombol secara vertikal */
     width: 100%; /* Menyebarkan tombol ke seluruh lebar form */
-    position: flex; /* Membuat tombol tetap di posisi */
     bottom: 0; /* Menempatkan tombol di bagian bawah form */
     left: 0; /* Menempatkan tombol di sisi kiri form */
   }
-  .prevbutton{
-    background-color:var(--secondary);
+  
+  .prevbutton {
+    background-color: var(--secondary);
     color: #F9F6D5;
     border-radius: 5px;
     border: none;
@@ -91,10 +94,10 @@
     font-weight: 600;
     cursor: pointer;
     width: 120px;
-    
   }
-  .nextbutton{
-    background-color:var(--secondary);
+  
+  .nextbutton {
+    background-color: var(--secondary);
     color: #F9F6D5;
     border-radius: 5px;
     border: none;
@@ -103,12 +106,15 @@
     font-weight: 600;
     cursor: pointer;
     width: 120px;
-    position: relative;
-
   }
+  
   .nextbutton:hover, .prevbutton:hover{
     background-color: #34465c;
     transition: 0.3s;
   }
+  /* .nextbutton:checked, .prevbutton:checked{
+    background-color: #34465c;
+    transition: 0.3s;
+  } */
   /* Add more styles as needed */
   

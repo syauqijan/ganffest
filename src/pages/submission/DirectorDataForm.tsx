@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./MultiForm.module.css"; // Import CSS module
+import styles from "./DirectorData.module.css"; // Import CSS module
 
 
 type AddressData = {
@@ -33,7 +33,11 @@ export function DirectorDataForm({
   return (
     <div className={styles.container}> 
     <div className={styles.inputContainer}>
-      <label className={styles.label}>Nama</label>
+
+
+    <div className={styles.inputContainerOne}>
+
+      <label className={styles.label}>Nama Lengkap</label>
       <input
         autoFocus
         required
@@ -42,7 +46,7 @@ export function DirectorDataForm({
         onChange={(e) => updateFields({ nama: e.target.value })}
         className={styles.input} 
       />
-      <label className={styles.label}>No HP</label>
+      <label className={styles.label}>Nomor Telepon</label>
       <input
         required
         type="text"
@@ -54,12 +58,12 @@ export function DirectorDataForm({
       <label className={styles.label}>Email</label>
       <input
         required
-        type="text"
+        type="email"
         value={email}
         onChange={(e) => updateFields({ email: e.target.value })}
         className={styles.input}
       />
-      <label className={styles.label}>Foto</label>
+      <label className={styles.label}>Link Foto Diri</label>
       <input
         required
         type="text"
@@ -78,7 +82,7 @@ export function DirectorDataForm({
         onChange={(e) => updateFields({ alamat: e.target.value })}
         className={styles.input}
       />
-      <label className={styles.label}>Kota</label>
+      <label className={styles.label}>Kota/Kabupaten</label>
 
       <input
         required
@@ -118,7 +122,11 @@ export function DirectorDataForm({
             </label>
       </div>
       </div>
-      <label className={styles.label}>Biografi</label>
+      </div>
+
+      <div className={styles.inputContainerThree}>
+
+      <label className={styles.label}>Biografi Director</label>
       <input
         required
         type="text"
@@ -126,6 +134,12 @@ export function DirectorDataForm({
         onChange={(e) => updateFields({ biografi: e.target.value })}
         className={styles.input}
       />
+      </div>
+
+
     </div>
+
+
+
   );
 }
