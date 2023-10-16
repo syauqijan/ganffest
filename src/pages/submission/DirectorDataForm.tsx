@@ -102,7 +102,7 @@ export function DirectorDataForm({
       />
       <label className={styles.label}>Jenis Kelamin</label>
       <div className={styles.radioButtons}>
-            <label>
+            <label className={styles.labelRadio}>
               <input
                 type="radio"
                 value="Laki-laki"
@@ -111,7 +111,7 @@ export function DirectorDataForm({
               />
               Laki-laki
             </label>
-            <label>
+            <label className={styles.labelRadio}>
               <input
                 type="radio"
                 value="Perempuan"
