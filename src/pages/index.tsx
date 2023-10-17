@@ -8,6 +8,7 @@ import styles from '@/styles/Homepage.module.css'
 import Timeline from '@/components/fragments/timeline'
 import OurProcess from '@/components/fragments/timeline'
 import AcaraFragment from '@/components/fragments/acara'
+import HomepageView from '@/views/homepage'
 const inter = Inter({ subsets: ['latin'] })
 const events = [
   { date: 'October 10, 2023', description: 'Event 1' },
@@ -17,15 +18,7 @@ const events = [
 ];
 export default function Home() {
   return (
-    <div className={styles.homepage}>
-      {/* <div className={styles.header}>
-      <h1 className={styles.calling}>Get ready! An interesting event will open soon!</h1>
-      </div> */}
-      {/* <CountdownTimer/> */}
-      <Slider/>
-      {/* <Timeline  />
-      <OurProcess/> */}
-      <AcaraFragment/>
-    </div>
+    <HomepageView/>
+
   )
 }

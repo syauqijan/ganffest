@@ -31,11 +31,11 @@ const Footer = () => {
                   <InstagramIcon className="social-icons" style={{color:'#222536'}}/>
               </a>
             </div>
-            <div className={styles.socmedIcon}>
+            {/* <div className={styles.socmedIcon}>
               <a href="https://www.youtube.com/@LFMITB" target="_blank" rel="noreferrer">   
                 <YouTubeIcon className="social-icons" style={{color:'#222536'}}/>
               </a>
-            </div>
+            </div> */}
             
             <div className={styles.socmedIcon}>
               <a href="https://twitter.com/ganffest" target="_blank" rel="noreferrer">

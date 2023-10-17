@@ -14,11 +14,14 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   if(req.method === 'POST'){
+    console.log(req.body)
     await createSubmissionData(req.body, ({status, message}:{status: boolean, message: string}) => {
       console.log(req.body)
         if(status){
+          console.log('berhasil')
             res.status(200).json({status, message});
         }else{
+          console.log('gagal')
             res.status(400).json({status, message});
         }
     })

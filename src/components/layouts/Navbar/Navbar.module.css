@@ -18,6 +18,11 @@
     color: var(--tertiary);
     margin-left: 20px;
     margin-right: 20px;
+    transition: 0.3s;
+}
+.navPage:hover{
+    color: var(--secondary);
+    transition: 0.3s;
 }
 .button{
     background: linear-gradient(to right, #F9F6D5 1%, #4863D8);
@@ -26,9 +31,15 @@
     padding: 10px;
     border-radius: 10px;
     width: 80px;
+
 }
 .button p{
     font-weight: bold;
+}
+.button:hover{
+    background-color: #34465c;
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
 }
 .logo{
     height: 64px;

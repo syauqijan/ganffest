@@ -18,7 +18,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export default app;
 
-
+// const apps = getApps();
+//   let firebaseApp = null;
+//   if (!apps.length) {
+//     firebaseApp = initializeApp(firebaseConfig);
+//   }
+//   else {
+//     firebaseApp = apps[0];
+//   }
+// export default firebaseApp;
 
 
 

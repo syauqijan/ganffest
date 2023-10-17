@@ -72,3 +72,13 @@
     margin-top: 5px;
     margin-bottom: 0;
 }
+
+.loginText{
+    margin-top: 25px;
+    font-size: 14px;
+}
+.loginText Link{
+    text-decoration: none;
+    color: #F9F6D5;
+    font-weight: 600;   
+}

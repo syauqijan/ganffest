@@ -17,7 +17,7 @@ const Navbar = () => {
             
         <div className={styles.navbarContainer}>
         <div className={styles.logo}>
-          <img src="/logo.png" alt="Logo" className={styles.logo} />
+          <img src="/logonavbar.png" alt="Logo" className={styles.logo} />
           
         </div>
         <div className={styles.contentNavbar}>

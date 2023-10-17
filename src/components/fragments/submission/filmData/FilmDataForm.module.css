@@ -22,7 +22,10 @@
     font-size: 1rem;
     width: 100%;
     background-color: transparent;
+    transition: border-color 0.9s ;
   }
+
+  
   .inputContainer {
     display: flex;
     flex-direction: row; /* Setengah dari lebar container */

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./MultiForm.module.css"; // Import CSS module
+import styles from "./FilmDataForm.module.css"; // Import CSS module
 import InputField from "@/components/fragments/inputfield";
 type FilmData = {
   judul_film: string;

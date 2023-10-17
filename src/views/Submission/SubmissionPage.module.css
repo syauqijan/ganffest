@@ -84,7 +84,7 @@
   }
   
   .prevbutton {
-    background-color: var(--secondary);
+    background-color: linear-gradient(to right, #F9F6D5, #4863D8);
     color: #F9F6D5;
     border-radius: 5px;
     border: none;
@@ -97,6 +97,7 @@
   
   .nextbutton {
     background-color: var(--secondary);
+
     color: #F9F6D5;
     border-radius: 5px;
     border: none;

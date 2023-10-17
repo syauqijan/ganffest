@@ -52,8 +52,8 @@ const LoginView = () => {
                 <button type="submit" name="" disabled={isLoading}>
                     {isLoading ? "Loading..." : "Login"}
                 </button>
-                <p >
-                    Don{"'"}t have an account? Sign Up  <Link href="/auth/register">here</Link>
+                <p className={styles.loginText}>
+                    Don{"'"}t have an account? Sign up  <Link href="/auth/register">here</Link>
                 </p>
             </form>
             </main>
