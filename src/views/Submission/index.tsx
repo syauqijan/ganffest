@@ -121,13 +121,6 @@ type FormDataType = {
       }
   }
   
-    // Memanggil fungsi untuk menyimpan data ke Firestore
-
- 
-
-
-  
-  
   return (
      <div className={styles.container}> {/* Apply CSS module class */}
       

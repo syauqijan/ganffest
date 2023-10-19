@@ -13,7 +13,7 @@ const Navbar = () => {
       console.log(router.asPath)
     };
     return (
-        <div className={styles.navbar}>
+        <div className={styles.navbar} style={{ position: router.pathname === '/' ? 'absolute' : 'relative', zIndex: 2 }}>
             
         <div className={styles.navbarContainer}>
         <div className={styles.logo}>
@@ -34,9 +34,11 @@ const Navbar = () => {
           <div className="m-4 flex items-center">
               {data && data.user.name}{''}
               {data ? (
-              <button className= {styles.button} onClick={() => signOut()}>Sign Out</button>
+              <button className= {styles.buttonAuth} onClick={() => signOut()}>
+                <p>Sign Out</p>
+                </button>
             ) : (
-              <button className= {styles.button} onClick={() => signIn()}>
+              <button className= {styles.buttonAuth} onClick={() => signIn()}>
                 <p>Sign In</p>
               </button>
             )}

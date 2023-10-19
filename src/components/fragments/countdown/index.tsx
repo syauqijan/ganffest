@@ -6,8 +6,6 @@ import Image from "next/image";
 import styles from "./CountdownTimer.module.css";
 
 const CountdownTimer = () => {
-  const eventDate = new Date('2023-10-16T00:00:00Z'); // Tanggal event 'calling entry'
-  const currentDate = new Date();
 
   const [partyTime, setPartyTime] = useState(false);
   const [days, setDays] = useState(0);
@@ -16,7 +14,7 @@ const CountdownTimer = () => {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    const target = new Date('2023-10-18T00:00:00Z');
+    const target = new Date('2023-10-25T00:00:00Z');
 
     const interval = setInterval(() => {
       const now = new Date();
