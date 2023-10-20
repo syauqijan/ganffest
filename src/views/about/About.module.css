@@ -1,0 +1,81 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--tertiary);
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    gap: 4rem;
+}
+
+.gff{
+    font-size: 18px;
+
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-direction: row;
+    display: flex;
+    gap: 5rem;
+}
+
+.textgff{
+    text-align: start;
+    width: 60%;
+    
+}
+.textgff h1{
+    font-size: 30px;
+    text-align: start;
+    width: 50%;
+    font-weight: 700;
+}
+.lfm{
+    font-size: 18px;
+    
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-direction: row;
+    display: flex;
+    gap: 5rem;
+}
+
+.textlfm{
+    text-align: start;
+    width: 60%;
+
+
+}
+.textlfm h1{
+    font-size: 30px;
+    text-align: start;
+    width: 50%;
+    font-weight: 700;
+}
+
+.flux{
+    font-size: 18px;
+
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-direction: row;
+    display: flex;
+    gap: 5rem;
+}
+
+.textflux{
+    text-align: start;
+    width: 60%;
+}
+
+.textflux h1{
+    font-size: 30px;
+    text-align: start;
+    width: 50%;
+    font-weight: 700;
+}
