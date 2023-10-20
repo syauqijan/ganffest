@@ -7,6 +7,7 @@ type MainLayoutProps = {
     children: React.ReactNode
 }
 const disableNavbars = ['/404'];
+const disableFooters = ['/404', '/auth/login', '/auth/register'];  
 const MainLayout = (props: MainLayoutProps) => {
     const { children } = props;
     const {pathname} = useRouter();
@@ -21,7 +22,8 @@ const MainLayout = (props: MainLayoutProps) => {
           
           </main>
         </div>
-        <Footer />
+        {!disableFooters.includes(pathname) && <Footer />}
+        
       </div>
       
       
