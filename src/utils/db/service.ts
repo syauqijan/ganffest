@@ -1,6 +1,7 @@
-import {collection, getFirestore, getDocs, query, where, getDoc, doc, addDoc, Timestamp,} from 'firebase/firestore';
+import {collection, getFirestore, getDocs, query, where, getDoc, doc, addDoc, updateDoc, Timestamp,} from 'firebase/firestore';
 import app from './firebase';
 import bcrypt from 'bcrypt';
+import { push, update } from 'firebase/database';
 
 
 const firestore = getFirestore(app);
@@ -107,4 +108,33 @@ export async function createSubmissionData(
     callback({status: false, message: error});
 }
 );
+}
+
+export async function signInWithGoogle(userData:any, callback: any){
+    const q = query(collection(firestore, "users"), where("email", "==", userData.email));
+    const snapshot = await getDocs(q);
+    const data : any = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data()
+    }));
+    if(data.length > 0){
+        await updateDoc(doc(firestore, "users", data[0].id), userData).then(() =>{
+            callback({status: true, message: "Successfully sign in with google", data: userData});
+        }).catch(() => {
+            callback({status: false, message: "Failed to sign in with google"});
+        }
+        );
+
+
+    }else{
+        await addDoc(collection(firestore, "users"), userData)
+        .then(() =>{
+            callback({status: true, message: "Successfully sign in with google", data: userData});
+            
+        })
+        .catch(() =>{
+            callback({status: false, message: "Failed to sign in with google"});
+
+        });
+    }
 }

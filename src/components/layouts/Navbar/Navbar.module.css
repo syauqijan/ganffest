@@ -62,3 +62,46 @@
 .boldLink{
     font: bold;
 }
+
+.avatar{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+}
+.avatarButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .dropdown {
+    position: absolute;
+    top: 100%; /* Menampilkan dropdown di bawah tombol */
+    right: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    z-index: 2; /* Menempatkan dropdown di atas konten lainnya */
+  }
+  
+  .dropdown button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  /* Sembunyikan dropdown secara default */
+  .dropdown {
+    display: flex;
+  }
+  
+  /* Tampilkan dropdown jika dropdownVisible true */
+  .dropdownVisible .dropdown {
+    display: flex;
+  }

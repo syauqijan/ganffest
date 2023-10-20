@@ -50,12 +50,13 @@ const LoginView = () => {
                 </div>
                 
                 <button type="submit" name="" disabled={isLoading}>
-                    {isLoading ? "Loading..." : "Login"}
+                    {isLoading ? "Loading..." : "Sign In"}
                 </button>
                 <p className={styles.loginText}>
                     Don{"'"}t have an account? Sign up  <Link href="/auth/register">here</Link>
                 </p>
             </form>
+            <button className={styles.google} onClick={() => signIn('google')}>SIGN IN WITH GOOGLE</button>
             </main>
         </div>
     )

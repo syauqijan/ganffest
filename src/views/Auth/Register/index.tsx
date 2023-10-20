@@ -15,10 +15,6 @@ const RegisterView = () => {
             userName:event.target.userName.value,
             userPassword:event.target.userPassword.value,
             userConfirmPassword:event.target.userConfirmPassword.value
-            
-
-
-
         };
         console.log(data);
         const result = await fetch('../api/register', {

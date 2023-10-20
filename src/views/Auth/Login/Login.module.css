@@ -37,7 +37,7 @@
 
 .box input[type="submit"], .box button[type="submit"], a.button {
     font-family: sans-serif;
-    background: #03a9f4;
+    background: var(--secondary);
     font-size: 11px;
     border: none;
     border-radius: 5px;
@@ -81,4 +81,18 @@
     text-decoration: none;
     color: #F9F6D5;
     font-weight: 600;   
+}
+
+.google{
+    background-color: var(--secondary);
+    color: #F9F6D5;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

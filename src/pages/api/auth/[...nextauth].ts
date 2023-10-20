@@ -1,8 +1,9 @@
-import { signIn } from "@/utils/db/service";
+import { signIn, signInWithGoogle } from "@/utils/db/service";
 import { compare } from "bcrypt";
 import { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
 import  CredentialsProvider  from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google";
 const authOptions: NextAuthOptions = {
     session: {
         strategy: "jwt",
@@ -46,13 +47,41 @@ const authOptions: NextAuthOptions = {
                 }
 
             },
-        })
+        }),
+        GoogleProvider({
+            clientId: process.env.GOOGLE_OAUTH_CLIENT_ID || "",
+            clientSecret: process.env.GOOGLE_OAUTH_CLIENT_SECRET || "",
+          })
+
     ],
     callbacks: {
-        jwt({token, account, profile, user} : any) {
+        async jwt({token, account, profile, user} : any) {
             if(account?.provider === "credentials") {
                 token.email = user.email;
                 token.username = user.username;
+            }
+            if(account?.provider === "google") {
+                const data = {
+                    username: user.name,
+                    email: user.email,
+                    image: user.image,
+                    type: "google",
+                };
+                await signInWithGoogle(data, (result : any) => {
+                    if(result.status){
+                        console.log(result);
+                        token.email = result.data.email;
+                        token.username = result.data.username;
+                        token.image = result.data.image;
+                        token.type = result.data.type;
+                    }
+                    else{
+                        console.log(result);
+                    }
+                });
+    
+
+                
             }
 
         
@@ -65,6 +94,10 @@ const authOptions: NextAuthOptions = {
             if("username" in token) {
                 session.user.username = token.username;
             }
+            if("image" in token) {
+                session.user.image = token.image;
+            }
+
             console.log(session);
             return session;
         }
