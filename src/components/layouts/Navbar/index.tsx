@@ -4,12 +4,12 @@ import styles from './Navbar.module.css'
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Navbar = () => {
     const router = useRouter(); // Dapatkan rute saat ini
     const [dropdownVisible, setDropdownVisible] = useState(false);
     const { data } = useSession();
-
     const toggleDropdown = () => {
       setDropdownVisible(!dropdownVisible);
     };
@@ -37,7 +37,9 @@ const Navbar = () => {
           </Link>
           {/* <img src='@/usergff.png' alt="Logo Akun" className="w-14 h-14 mx-4" /> */}
           <div className="m-4 flex items-center">
+            
           {data ? (
+            
               <div className={styles.avatarContainer}>
                 {data?.user?.image ? (
                   <button
@@ -55,11 +57,7 @@ const Navbar = () => {
                   className={styles.avatarButton}
                   onClick={() => toggleDropdown()}
                 >
-                  <img
-                    src='/usergff.png'
-                    alt="Profile"
-                    className={styles.avatar}
-                  />
+                  <AccountCircleIcon className={styles.avatar} style={{ fontSize: '40px' , color:'#F9F6D5'}}/>
                 </button>
                 )}
                 {dropdownVisible && (

@@ -8,6 +8,16 @@ const LoginView = () => {
     const {push, query} = useRouter();
     const [error, setError] = useState('');
     const callbackUrl : any = query.callbackUrl || "/";
+    const handleGoogleSignIn = async () => {
+        const res = await signIn('google', { callbackUrl });
+        
+        if (!res?.error) {
+            // Redirect to the homepage after successful Google sign-in
+            push(callbackUrl);
+        } else {
+            setError(res.error);
+        }
+    };
     const handleSubmit = async (event: any) => {
         event.preventDefault();
         setError('');
@@ -37,7 +47,7 @@ const LoginView = () => {
             <main className={styles.box}>
             <h2>Login</h2>
             {error && <p className={styles.error}>{error}</p>}
-            <form onSubmit={handleSubmit} method="POST">
+            <form className={styles.loginForm} onSubmit={handleSubmit} method="POST">
             <div className={styles.inputBox}>
                     <label >Email</label>
                     <input type="email" name="email" id="email" placeholder="type your email" required/>
@@ -53,10 +63,22 @@ const LoginView = () => {
                     {isLoading ? "Loading..." : "Sign In"}
                 </button>
                 <p className={styles.loginText}>
-                    Don{"'"}t have an account? Sign up  <Link href="/auth/register">here</Link>
+                    Don{"'"}t have an account? <Link className={styles.registerLink} href="/auth/register">Sign up here</Link>
                 </p>
             </form>
-            <button className={styles.google} onClick={() => signIn('google')}>SIGN IN WITH GOOGLE</button>
+
+                <div className={styles.orContainer}>
+                    <div className={styles.dividerLine}></div>
+                    <p className={styles.orText}>or</p>
+                    <div className={styles.dividerLine}></div>
+                </div>
+
+
+
+            <button className={styles.google} onClick={handleGoogleSignIn}>
+                <img src="/google.png" alt="google" className={styles.googleIcon} />
+                <p className={styles.googleText}>Sign in with google</p>
+                </button>
             </main>
         </div>
     )

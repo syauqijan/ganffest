@@ -1,6 +1,7 @@
 
+
 .box {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: white;
     border-radius: 10px;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
     margin: auto auto;
@@ -9,24 +10,25 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    justify-content: center;
 }
 
 .box h2 {
     margin: 0 0 30px 0;
     padding: 0;
-    color: #fff;
+    color: #000000;
     text-align: center;
+    
 }
 
 .box .inputBox label {
-    color: #fff;
+    color: #000000;
 }
-
 .box .inputBox input {
     background: transparent;
     border: none;
-    border-bottom: 1px solid #fff;
-    color: #fff;
+    border-bottom: 1px solid #000000;
+    color: #000000;
     font-size: 18px;
     letter-spacing: 2px;
     margin-bottom: 30px;
@@ -35,9 +37,10 @@
     width: 100%;
 }
 
+
 .box input[type="submit"], .box button[type="submit"], a.button {
     font-family: sans-serif;
-    background: #03a9f4;
+    background: var(--secondary);
     font-size: 11px;
     border: none;
     border-radius: 5px;
@@ -71,4 +74,13 @@
     font-size: 12px;
     margin-top: 5px;
     margin-bottom: 0;
+}
+.loginLink{
+    text-decoration: none;
+    color: var(--secondary);
+}
+.registerText{
+    margin-top: 25px;
+    font-size: 14px;
+    color: #000000;
 }

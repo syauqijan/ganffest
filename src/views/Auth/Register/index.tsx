@@ -63,8 +63,8 @@ const RegisterView = () => {
                 <button type="submit" name="" disabled={isLoading}>
                     {isLoading ? "Loading..." : "Register"}
                 </button>
-                <p >
-                    have an account? <Link href="/auth/login">Login</Link>
+                <p className={styles.registerText}>
+                    have an account? <Link className={styles.loginLink} href="/auth/login">Login</Link>
                 </p>
             </form>
             </main>
