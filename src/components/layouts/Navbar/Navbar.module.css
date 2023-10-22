@@ -76,32 +76,42 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-  }
-  .dropdown {
+}
+.dropdownWrap{
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.dropdown {
     position: absolute;
-    top: 100%; /* Menampilkan dropdown di bawah tombol */
-    right: 0;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    right: 25px;
+    top: 100px;
+    background: var(--tertiary);
+    color: black;
+    border-radius: 7px;
     padding: 8px;
     display: flex;
     flex-direction: column;
-    z-index: 2; /* Menempatkan dropdown di atas konten lainnya */
-  }
-  
-  .dropdown button {
+    z-index: 2; 
+
+}
+
+.dropdown button {
+    background: var(--tertiary);
     border: none;
     background: transparent;
+    
+}
+.dropdown:hover {
+    background: #827149;
     cursor: pointer;
-  }
-  
-  /* Sembunyikan dropdown secara default */
-  .dropdown {
+    transition: 0.3s;
+}
+.dropdown {
     display: flex;
-  }
-  
-  /* Tampilkan dropdown jika dropdownVisible true */
-  .dropdownVisible .dropdown {
+}
+
+/* Tampilkan dropdown jika dropdownVisible true */
+.dropdownVisible .dropdown {
     display: flex;
-  }
+}

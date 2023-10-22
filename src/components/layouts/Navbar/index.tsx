@@ -10,6 +10,9 @@ const Navbar = () => {
     const router = useRouter(); // Dapatkan rute saat ini
     const [dropdownVisible, setDropdownVisible] = useState(false);
     const { data } = useSession();
+    const closeDropdown = () => {
+      setDropdownVisible(false);
+    };
     const toggleDropdown = () => {
       setDropdownVisible(!dropdownVisible);
     };
@@ -50,11 +53,10 @@ const Navbar = () => {
                 </button>
 
                 {dropdownVisible && (
-                  <div className={styles.dropdown}>
-                    <button className={styles.buttonProfile}>
-                    <p>My Profile</p>
-                    </button>
-                    <button onClick={() => signOut()}>Sign Out</button>
+                  <div className={styles.dropdownWrap} onClick={() => closeDropdown()}>
+                    <div className={styles.dropdown}>
+                    <button className={styles.buttonSignout} onClick={() => signOut()}>Sign Out</button>
+                    </div>
                   </div>
                 )}
               </div>

@@ -19,6 +19,7 @@ const HomepageView = () => {
           {/* <Timeline  />
           <OurProcess/> */}
           <AcaraFragment/>
+          <Timeline/>
         </div>
       )
 }

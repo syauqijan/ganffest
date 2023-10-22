@@ -1,76 +1,115 @@
 // pages/ourprocess.tsx
 import { NextApiRequest } from 'next';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Head from 'next/head';
+import styles from './Timeline.module.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
-const OurProcess = () => {
-  const [activeStep, setActiveStep] = useState<number>(1);
 
+
+const Timeline = () => {
+  const lineRef = useRef<HTMLDivElement | null>(null); 
+  const maxLineHeight = 1200;
   useEffect(() => {
-    const $ = require('jquery');
-    require('jquery-ui');
-
-    $(".step").click(function (this: HTMLLIElement) {
-      $(this).addClass("active").prevAll().addClass("active");
-      $(this).nextAll().removeClass("active");
+    AOS.init({
+      duration: 600, // Durasi animasi
+      offset: 200, // Offset dari tepi layar
+      easing: 'ease-in-out', // Easing function
     });
 
-    $(".step01").click(function () {
-      $("#line-progress").css("width", "3%");
-      $(".discovery").addClass("active").siblings().removeClass("active");
-    });
+    const handleScroll = () => {
+      const line = lineRef.current;
 
-    $(".step02").click(function () {
-      $("#line-progress").css("width", "25%");
-      $(".strategy").addClass("active").siblings().removeClass("active");
-    });
+      if (line) {
+        const rect = line.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const lineTop = rect.top;
 
-    $(".step03").click(function () {
-      $("#line-progress").css("width", "50%");
-      $(".creative").addClass("active").siblings().removeClass("active");
-    });
+        
+        // Menghitung tinggi garis berdasarkan posisi scroll
+        let lineHeight = Math.max(0, windowHeight - lineTop);
 
-    $(".step04").click(function () {
-      $("#line-progress").css("width", "75%");
-      $(".production").addClass("active").siblings().removeClass("active");
-    });
+        // Batasi tinggi garis sesuai dengan maksimum yang diinginkan
+        if (lineHeight > maxLineHeight) {
+          lineHeight = maxLineHeight;
+        }
+        line.style.height = `${lineHeight}px`;
+      }
+    };
 
-    $(".step05").click(function () {
-      $("#line-progress").css("width", "100%");
-      $(".analysis").addClass("active").siblings().removeClass("active");
-    });
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
-
   return (
-    <>
-      <Head>
-        <title>Our Process</title>
-      </Head>
-      <h1 className="text-center text-3xl font-semibold mt-12 uppercase">Our Process</h1>
-      <div className="process_wrapper">
-        <div id="progres_bar_container">
-          <ul>
-            <li className={`step step01 ${activeStep === 1 ? 'active' : ''}`}><div className="step-inner">HOME WORK</div></li>
-            <li className={`step step02 ${activeStep === 2 ? 'active' : ''}`}><div className="step-inner">RESPONSIVE PART</div></li>
-            <li className={`step step03 ${activeStep === 3 ? 'active' : ''}`}><div className="step-inner">Creative cREATIONS</div></li>
-            <li className={`step step04 ${activeStep === 4 ? 'active' : ''}`}><div className="step-inner">TESTIMONIALS PART</div></li>
-            <li className={`step step05 ${activeStep === 5 ? 'active' : ''}`}><div className="step-inner">OUR LOCATIONS</div></li>
-          </ul>
-          <div id="line">
-            <div id="line-progress" style={{ width: `${(activeStep - 1) * 25 + 3}%` }}></div>
-          </div>
-        </div>
-
-        <div id="progress-content-section">
-          <div className={`section-content discovery ${activeStep === 1 ? 'active' : ''}`}>
-            <h2>HOME SECTION</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque justo, consequat non fermentum ac, tempor eu turpis. Proin nulla eros, placerat non ipsum ut, dapibus ullamcorper ex. Nulla in dapibus lorem. Suspendisse vitae velit ac ante consequat placerat ut sed eros. Nullam porttitor mattis mi, id fringilla ex consequat eu. Praesent pulvinar tincidunt leo et condimentum. Maecenas volutpat turpis at felis egestas malesuada. Phasellus sem odio, venenatis at ex a, lacinia suscipit orci.</p>
-          </div>
-          {/* Tambahkan konten untuk langkah-langkah lain di sini */}
-        </div>
+    <div className={styles.container}>
+      <div className={styles.topSection}>
+        <h1 className={styles.timelineTitle}>Our Timeline</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus iusto consequatur natus voluptatibus distinctio quo tenetur placeat nihil? Eligendi dolore consequatur eveniet commodi illum obcaecati assumenda distinctio blanditiis? Beatae?
+          </p>
       </div>
-    </>
-  );
-};
+      <div className={styles.timeline} >
+      <div ref={lineRef} className={styles.line}>
 
-export default OurProcess;
+        </div>
+        <div data-aos="fade-right" className={styles.section}>
+          <div className={styles.bead}></div>
+          <div className={styles.content}>
+            <h2 className={styles.eventTitle}>Calling Entry</h2>
+            <p>
+              TBA
+            </p>
+          </div>
+        </div>
+
+        <div data-aos="fade-left" className={styles.section}>
+          <div className={styles.bead}></div>
+          <div className={styles.content}>
+            <h2 className={styles.eventTitle}>Roadshow Komunitas</h2>
+            <p>
+              TBA
+            </p>
+          </div>
+        </div>
+
+        <div data-aos="fade-right" className={styles.section}>
+          <div className={styles.bead}></div>
+          <div className={styles.content}>
+            <h2 className={styles.eventTitle}>Malam Komunitas</h2>
+            <p>
+              TBA
+            </p>
+          </div>
+        </div>
+
+        <div data-aos="fade-left" className={styles.section}>
+          <div className={styles.bead}></div>
+          <div className={styles.content}>
+            <h2 className={styles.eventTitle}>Sinema Keliling</h2>
+            <p>
+              TBA
+            </p>
+          </div>
+        </div>
+
+        <div data-aos="fade-right" className={styles.section}>
+          <div className={styles.bead}></div>
+          <div className={styles.content}>
+            <h2 className={styles.eventTitle}>Main Event</h2>
+            <p>
+              TBA
+            </p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  )
+}
+
+export default Timeline;
