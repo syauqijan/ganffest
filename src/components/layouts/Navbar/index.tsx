@@ -41,25 +41,14 @@ const Navbar = () => {
           {data ? (
             
               <div className={styles.avatarContainer}>
-                {data?.user?.image ? (
-                  <button
-                  className={styles.avatarButton}
-                  onClick={() => toggleDropdown()}
-                >
-                  <img
-                    src={data.user.image}
-                    alt="Profile"
-                    className={styles.avatar}
-                  />
-                </button>
-                ) : (
+
                   <button
                   className={styles.avatarButton}
                   onClick={() => toggleDropdown()}
                 >
                   <AccountCircleIcon className={styles.avatar} style={{ fontSize: '40px' , color:'#F9F6D5'}}/>
                 </button>
-                )}
+
                 {dropdownVisible && (
                   <div className={styles.dropdown}>
                     <button className={styles.buttonProfile}>
