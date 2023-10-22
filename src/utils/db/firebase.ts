@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { getApps, initializeApp } from "firebase/app";
+import { FirebaseApp, getApps, initializeApp } from "firebase/app";
 import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut} from 'firebase/auth';
 import { getDatabase } from "firebase/database";
 import firebase from 'firebase/app'
@@ -15,7 +15,18 @@ const firebaseConfig = {
 };
 
 // Initialize Fireexport 
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
+// export default app;
+
+const apps = getApps();
+let app: FirebaseApp | null = null;
+
+if (!apps.length) {
+  app = initializeApp(firebaseConfig);
+} else {
+  app = apps[0];
+}
+
 export default app;
 
 // const apps = getApps();
