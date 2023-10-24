@@ -54,7 +54,7 @@ const LoginView = () => {
             if (!res?.error) {
                 event.target.reset();
                 setIsLoading(false);
-                push(callbackUrl);
+                push('/');
             } else {
                 setIsLoading(false);
                 setError('Your email or password is not valid');

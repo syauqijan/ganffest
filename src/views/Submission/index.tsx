@@ -6,6 +6,7 @@ import { DirectorDataForm } from "../../components/fragments/submission/director
 import { useMultistepForm } from "../../views/Submission/useMultistepForm"
 import { FilmDataForm } from "../../components/fragments/submission/filmData/FilmDataForm"
 import styles from './SubmissionPage.module.css'
+import { useSession } from 'next-auth/react';
 
 
 type FormDataType = {
@@ -64,6 +65,7 @@ type FormDataType = {
     provinsi_produksi: "",
     nama_produser: "",
     no_hp_produser: "",
+    
   
   }
   
@@ -72,6 +74,8 @@ type FormDataType = {
     const [error, setError] = useState('');
     const {push} = useRouter();
     const [data, setData] = useState(INITIAL_DATA)
+    const { data: session } = useSession();
+
     function updateFields(fields: Partial<FormDataType>) {
       setData(prev => {
         return { ...prev, ...fields }
@@ -85,17 +89,36 @@ type FormDataType = {
   ]);
 
   
+  // const onSubmit = async (e: any) => {
+  //   e.preventDefault();
+  //   if (!isLastStep) return next();
+  //   console.log(data)
+  //   const result = await fetch('../api/submission', {
+  //     method: 'POST',
+  //     headers: {
+  //         'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(data),
+  // });
   const onSubmit = async (e: any) => {
     e.preventDefault();
+
+    // Check if it's the last step
     if (!isLastStep) return next();
-    console.log(data)
+
+    // Add user's email to the data
+    const dataWithUserEmail = {
+        ...data,
+        emailSubmitter: session?.user?.email || '', // Use the user's email from the session
+    };
+
     const result = await fetch('../api/submission', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-  });
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataWithUserEmail), // Include the user's email
+    });
   
   
 
@@ -126,7 +149,7 @@ type FormDataType = {
             <div className={styles.titleText}>
             {currentStepIndex === 0 && <h1>Film Data</h1>}
             {currentStepIndex === 1 && <h1>Director Data</h1>}
-            {currentStepIndex === 2 && <h1>Production House Data</h1>}
+            {currentStepIndex === 2 && <h1>Production House and Producer Data</h1>}
             </div>
           </div>
           <div className={styles.stepCounter}>
