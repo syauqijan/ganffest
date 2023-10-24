@@ -22,19 +22,27 @@
 }
 
 .box .inputBox label {
-    color: #000000;
+    color: #5c5c5c;
+
+}
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 .box .inputBox input {
     background: transparent;
     border: none;
-    border-bottom: 1px solid #000000;
+    /* border-bottom: 1px solid #000000; */
     color: #000000;
-    font-size: 18px;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin: 0px;
     outline: none;
-    padding: 10px 0;
-    width: 100%;
+    /* padding: 10px 0; */
+    width: 200px;
 }
 
 

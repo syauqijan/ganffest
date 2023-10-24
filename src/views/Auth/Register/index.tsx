@@ -2,10 +2,19 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import styles from './Register.module.css'
 import { useRouter } from 'next/router';
+import { FormControl, IconButton, Input, InputAdornment, InputLabel, TextField } from '@mui/material';
+import { VisibilityOff, Visibility } from '@mui/icons-material';
 const RegisterView = () => {
     const [isLoading, setIsLoading] = useState(false);
     const {push} = useRouter();
     const [error, setError] = useState('');
+    const [showPassword, setShowPassword] = React.useState(false);
+
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+    const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+    };
     const handleSubmit = async (event: any) => {
         event.preventDefault();
         setError('');
@@ -41,30 +50,63 @@ const RegisterView = () => {
             <main className={styles.box}>
             <h2>Register</h2>
             {error && <p className={styles.error}>{error}</p>}
-            <form onSubmit={handleSubmit} method="POST">
-            <div className={styles.inputBox}>
-                    <label >Email</label>
-                    <input type="email" name="email" id="email" placeholder="type your email" required/>
+            <form className={styles.registerForm} onSubmit={handleSubmit} method="POST">
+                <div className={styles.inputBox}>
+                    <TextField sx={{ width: '29ch', marginBottom:'15px' }} id="email" label="Email" placeholder="Type your email" variant="standard" />
                 </div>
                 <div className={styles.inputBox}>
-                    <label >Username</label>
-                    <input type="text" name="userName" id="userName" placeholder="type your username" required/>
+                    <TextField sx={{ width: '29ch', marginBottom:'15px' }} id="userName" label="Username" placeholder="Type your username" variant="standard" />
                 </div>
                 <div className={styles.inputBox}>
-                    <label >Password</label>
-                    <input type="password" name="userPassword" id="userPassword" placeholder="type your password"
-                        required/>
+                    <FormControl sx={{ width: '29ch', marginBottom:'15px'}} variant="standard">
+                        <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+                        <Input
+                            id="userPassword"
+                            type={showPassword ? 'text' : 'password'}
+                            placeholder='Type your password'
+                            name="userPassword"
+                            endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                aria-label="toggle password visibility"
+                                onClick={handleClickShowPassword}
+                                onMouseDown={handleMouseDownPassword}
+                                >
+                                {showPassword ? <VisibilityOff /> : <Visibility />}
+                                </IconButton>
+                            </InputAdornment>
+                            }
+                        />
+                    </FormControl>
                 </div>
                 <div className={styles.inputBox}>
-                    <label>Confirm Password</label>
-                    <input type="password" name="userConfirmPassword" id="userConfirmPassword" placeholder="confirm your password"
-                        required/>
+                    <FormControl sx={{ width: '29ch', marginBottom:'15px'}} variant="standard">
+                        <InputLabel htmlFor="standard-adornment-password">Confirm Password</InputLabel>
+                        <Input
+                            id="userConfirmPassword"
+                            type={showPassword ? 'text' : 'password'}
+                            placeholder='Confirm your password'
+                            name="userConfirmPassword"
+                            endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                aria-label="toggle password visibility"
+                                onClick={handleClickShowPassword}
+                                onMouseDown={handleMouseDownPassword}
+                                >
+                                {showPassword ? <VisibilityOff /> : <Visibility />}
+                                </IconButton>
+                            </InputAdornment>
+                            }
+                        />
+                    </FormControl>
+                    
                 </div>
                 <button type="submit" name="" disabled={isLoading}>
                     {isLoading ? "Loading..." : "Register"}
                 </button>
                 <p className={styles.registerText}>
-                    have an account? <Link className={styles.loginLink} href="/auth/login">Login</Link>
+                    Have an account? <Link className={styles.loginLink} href="/auth/login">Login</Link>
                 </p>
             </form>
             </main>

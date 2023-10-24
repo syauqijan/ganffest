@@ -6,7 +6,7 @@ const AboutView = () => {
     <div className={styles.container}>
       <div className={styles.gff}>
         <div className={styles.logogff}>
-            <Image src='/gff.png' alt='logo' width={300} height={300} />
+            <Image src='/gff.svg' alt='logo-gff' width={300} height={300} />
         </div>
         <div className={styles.textgff}>
           <h1 >Ganesha Film Festival</h1>
@@ -26,7 +26,7 @@ const AboutView = () => {
       <div className={styles.flux}>
       
         <div className={styles.logoflux}>
-            <Image src='/flux.png' alt='logo' width={300} height={300} />
+            <Image src='/flux.svg' alt='logo-flux' width={300} height={300} />
         </div>
         <div className={styles.textflux} >
           <h1 > Ganesha Film Festival 2024</h1>
