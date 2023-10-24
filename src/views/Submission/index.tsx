@@ -122,12 +122,12 @@ type FormDataType = {
   }
   
   return (
-     <div className={styles.container}> {/* Apply CSS module class */}
+     <div className={styles.container}> 
       
       <form onSubmit={onSubmit} className={styles.myForm} method='POST'>
         <div className={styles.headerForm}>
         <h1>FORM SUBMISSION</h1>
-        </div> {/* Apply global CSS class */}
+        </div> 
 
         <div className={styles.header}>
           <div className={styles.title}>
@@ -146,7 +146,7 @@ type FormDataType = {
         </div>
         <hr className={styles.separator} />
         {step}
-        <div className={styles.buttonContainer}> {/* Apply CSS module class */}
+        <div className={styles.buttonContainer}> 
           {!isFirstStep && (
             <button className={styles.prevbutton} type="button" onClick={back}>
               Back

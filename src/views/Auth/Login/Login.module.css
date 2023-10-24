@@ -1,19 +1,21 @@
 
 .box {
-    background-color: white;
+    background-color: rgb(247, 247, 247);
     border-radius: 10px;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
-    margin: auto auto;
+    margin-bottom: 1000px;
     padding: 40px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     justify-content: center;
+
 }
 
 .box h2 {
     margin: 0 0 30px 0;
+    
     padding: 0;
     color: #000000;
     text-align: center;
@@ -21,27 +23,27 @@
 }
 
 .box .inputBox label {
-    color: #000000;
+    color: #5c5c5c;
 }
 
-/* .loginForm{
+.loginForm{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
-} */
+}
 .box .inputBox input {
     background: transparent;
     border: none;
-    border-bottom: 1px solid #000000;
+    /* border-bottom: 1px solid #000000; */
     color: #000000;
-    font-size: 18px;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin: 0px;
     outline: none;
-    padding: 10px 0;
-    width: 100%;
+    /* padding: 10px 0; */
+    width: 200px;
 }
 
 .box input[type="submit"], .box button[type="submit"], a.button {
@@ -145,4 +147,21 @@
     padding: 0 10px;
     color: #000000;
     font-weight: 400;
+}
+.css-qcbczu-MuiFormControl-root {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    vertical-align: top;
+    margin: 0;
+    width: 22.5ch;
 }

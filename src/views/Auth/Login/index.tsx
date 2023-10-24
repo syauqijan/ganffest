@@ -3,11 +3,23 @@ import React, { useState } from 'react'
 import styles from './Login.module.css'
 import { useRouter } from 'next/router';
 import { signIn } from 'next-auth/react';
+import { FormControl, Input, InputAdornment, InputLabel, TextField } from '@mui/material';
+import { VisibilityOff } from '@mui/icons-material';
+import IconButton from '@mui/material/IconButton';
+import { Visibility } from '@mui/icons-material';
+
 const LoginView = () => {
     const [isLoading, setIsLoading] = useState(false);
     const {push, query} = useRouter();
     const [error, setError] = useState('');
     const callbackUrl : any = query.callbackUrl || "/";
+    const [showPassword, setShowPassword] = React.useState(false);
+
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+    const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+    };
     const handleGoogleSignIn = async () => {
         const res = await signIn('google', { callbackUrl });
         
@@ -46,17 +58,44 @@ const LoginView = () => {
         <div id="tsparticles">
             <main className={styles.box}>
             <h2>Login</h2>
+            {/* <div className={styles.logo}>
+                <img src="/logonavbar.svg" alt="Logo" className={styles.logo} />
+                
+            </div> */}
             {error && <p className={styles.error}>{error}</p>}
             <form className={styles.loginForm} onSubmit={handleSubmit} method="POST">
-            <div className={styles.inputBox}>
-                    <label >Email</label>
-                    <input type="email" name="email" id="email" placeholder="type your email" required/>
+                <div className={styles.inputBox}>
+                    {/* <label >Email</label>
+                    <input type="email" name="email" id="email" placeholder="type your email" required/> */}
+                    <TextField sx={{ width: '29ch', marginBottom:'15px' }} id="email" label="Email" placeholder="Type your email" variant="standard" />
                 </div>
+                {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
+                {/* <TextField id="userPassword" label="Password" placeholder="Type your password" variant="standard" /> */}
                 
                 <div className={styles.inputBox}>
-                    <label >Password</label>
+                    {/* <label >Password</label>
                     <input type="password" name="userPassword" id="userPassword" placeholder="type your password"
-                        required/>
+                        required/> */}
+                        <FormControl sx={{ width: '29ch', marginBottom:'15px'}} variant="standard">
+                    <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+                    <Input
+                        id="userPassword"
+                        type={showPassword ? 'text' : 'password'}
+                        placeholder='Type your password'
+                        name="userPassword"
+                        endAdornment={
+                        <InputAdornment position="end">
+                            <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                            >
+                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                            </IconButton>
+                        </InputAdornment>
+                        }
+                    />
+                    </FormControl>
                 </div>
                 
                 <button type="submit" name="" disabled={isLoading}>
