@@ -10,7 +10,7 @@ import 'aos/dist/aos.css';
 
 const Timeline = () => {
   const lineRef = useRef<HTMLDivElement | null>(null); 
-  const maxLineHeight = 1200;
+  const maxLineHeight = 1250;
   useEffect(() => {
     AOS.init({
       duration: 600, 
@@ -61,7 +61,7 @@ const Timeline = () => {
           <div className={styles.content}>
             <h2 className={styles.eventTitle}>Calling Entry</h2>
             <p>
-              TBA
+              1 November 2023
             </p>
           </div>
         </div>
@@ -71,7 +71,7 @@ const Timeline = () => {
           <div className={styles.content}>
             <h2 className={styles.eventTitle}>Roadshow Komunitas</h2>
             <p>
-              TBA
+              10 November 2023
             </p>
           </div>
         </div>
@@ -81,7 +81,7 @@ const Timeline = () => {
           <div className={styles.content}>
             <h2 className={styles.eventTitle}>Malam Komunitas</h2>
             <p>
-              TBA
+              20 November 2023
             </p>
           </div>
         </div>
@@ -91,7 +91,7 @@ const Timeline = () => {
           <div className={styles.content}>
             <h2 className={styles.eventTitle}>Sinema Keliling</h2>
             <p>
-              TBA
+              15 Januari 2024
             </p>
           </div>
         </div>
@@ -101,7 +101,7 @@ const Timeline = () => {
           <div className={styles.content}>
             <h2 className={styles.eventTitle}>Main Event</h2>
             <p className={styles.eventDate}>
-              TBA
+              8 Maret 2024
             </p>
           </div>
         </div>

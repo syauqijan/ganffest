@@ -29,15 +29,15 @@ const Navbar = () => {
           
         </div>
         <div className={styles.contentNavbar}>
-        <Link  href="/" className={styles.navPage}>
-            Homepage
-          </Link>
-          <Link href="/submission" className={styles.navPage}>
-            Submission
-          </Link>
-          <Link href="/about" className={styles.navPage}>
-            About Us
-          </Link>
+        <Link href="/" className={`${styles.navPage} ${router.pathname === '/' ? styles.activeLink : ''}`}>
+          Homepage
+        </Link>
+        <Link href="/submission" className={`${styles.navPage} ${router.pathname === '/submission' ? styles.activeLink : ''}`}>
+          Submission
+        </Link>
+        <Link href="/about" className={`${styles.navPage} ${router.pathname === '/about' ? styles.activeLink : ''}`}>
+          About Us
+        </Link>
           {/* <img src='@/usergff.png' alt="Logo Akun" className="w-14 h-14 mx-4" /> */}
           <div className="m-4 flex items-center">
             
@@ -49,7 +49,7 @@ const Navbar = () => {
                   className={styles.avatarButton}
                   onClick={() => toggleDropdown()}
                 >
-                  <AccountCircleIcon className={styles.avatar} style={{ fontSize: '40px' , color:'#F9F6D5'}}/>
+                  <AccountCircleIcon className={styles.avatar} style={{ fontSize: '40px' , color:'white'}}/>
                 </button>
 
                 {dropdownVisible && (

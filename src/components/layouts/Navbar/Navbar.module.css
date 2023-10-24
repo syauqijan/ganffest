@@ -15,7 +15,7 @@
     width: 100%;
 }
 .navPage{
-    color: var(--tertiary);
+    color: white;
     margin-left: 20px;
     margin-right: 20px;
     transition: 0.3s;
@@ -31,23 +31,31 @@
     padding: 10px;
     border-radius: 10px;
     width: 100px; */
-    background-color: var(--tertiary);
+    background-color: rgb(255, 255, 255);
 
     color: #000000;
-    border-radius: 5px;
+    border-radius: 10px;
+    /* border-image: linear-gradient(to right, #F9F6D5, #4863D8);
+    border-image-slice: 1;
+    border-image-width: 1.5px ; */
     border: none;
     padding: 10px;
-    font-size: 16px;
-    font-weight: 600;
+    /* font-size: 16px;
+    font-weight: 100; */
     cursor: pointer;
     width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
 }
 .buttonAuth p{
     font-weight: bold;
 }
 .buttonAuth:hover{
-    background-color: #9e8f6f;
+    background-color: var(--secondary);
     transition: 0.3s;
 }
 .logo{
@@ -84,26 +92,29 @@
 }
 .dropdown {
     position: absolute;
-    right: 25px;
+    right: 20px;
     top: 100px;
-    background: var(--tertiary);
+    background: white;
     color: black;
     border-radius: 7px;
     padding: 8px;
     display: flex;
     flex-direction: column;
     z-index: 2; 
+    font-size: 16px;
+    height: 35px;
+    justify-content: center;
 
 }
 
 .dropdown button {
-    background: var(--tertiary);
+    background: white;
     border: none;
     background: transparent;
     
 }
 .dropdown:hover {
-    background: #827149;
+    background: var(--secondary);
     cursor: pointer;
     transition: 0.3s;
 }
@@ -115,3 +126,12 @@
 .dropdownVisible .dropdown {
     display: flex;
 }
+
+.activeLink {
+    /* Atur gradient linear sesuai keinginan Anda */
+    border-image: linear-gradient(to right, #F9F6D5, #4863D8);
+    border-image-slice: 1;
+    border-image-width: 0 0 1.5px 0; /* Atur ketebalan border sesuai keinginan Anda */
+}
+  
+  
