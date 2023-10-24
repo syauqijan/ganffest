@@ -23,12 +23,12 @@ const LoginView = () => {
     const handleGoogleSignIn = async () => {
         const res = await signIn('google', { callbackUrl });
         
-        if (!res?.error) {
-            // Redirect to the homepage after successful Google sign-in
-            push(callbackUrl);
-        } else {
-            setError(res.error);
-        }
+        // if (!res?.error) {
+        //     // Redirect to the homepage after successful Google sign-in
+        //     push(callbackUrl);
+        // } else {
+        //     setError(res.error);
+        // }
     };
     const handleSubmit = async (event: any) => {
         event.preventDefault();
