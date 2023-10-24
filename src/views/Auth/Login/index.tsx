@@ -32,26 +32,37 @@ const LoginView = () => {
     };
     const handleSubmit = async (event: any) => {
         event.preventDefault();
-        setError('');
+        setError(''); 
+
+        const email = event.target.email.value;
+        const password = event.target.userPassword.value;
+
+        if (!email || !password) {
+            setError('Please fill all this field');
+            return; 
+        }
+
         setIsLoading(true);
-        try{
+
+        try {
             const res = await signIn('credentials', {
-                redirect:false,
-                email:event.target.email.value,
-                password:event.target.userPassword.value
+                redirect: false,
+                email: email,
+                password: password
             });
-            if(!res?.error){
+
+            if (!res?.error) {
                 event.target.reset();
                 setIsLoading(false);
                 push(callbackUrl);
-            }else{
+            } else {
                 setIsLoading(false);
-                setError(res.error);
+                setError('Your email or password is not valid');
             }
-        }catch(error: any){
+        } catch (error: any) {
             console.log(error);
             setIsLoading(false);
-            setError(error);
+            setError('Your email or password is not valid'); 
         }
     }
     return (
@@ -65,17 +76,10 @@ const LoginView = () => {
             {error && <p className={styles.error}>{error}</p>}
             <form className={styles.loginForm} onSubmit={handleSubmit} method="POST">
                 <div className={styles.inputBox}>
-                    {/* <label >Email</label>
-                    <input type="email" name="email" id="email" placeholder="type your email" required/> */}
                     <TextField sx={{ width: '29ch', marginBottom:'15px' }} id="email" label="Email" placeholder="Type your email" variant="standard" />
                 </div>
-                {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
-                {/* <TextField id="userPassword" label="Password" placeholder="Type your password" variant="standard" /> */}
                 
                 <div className={styles.inputBox}>
-                    {/* <label >Password</label>
-                    <input type="password" name="userPassword" id="userPassword" placeholder="type your password"
-                        required/> */}
                         <FormControl sx={{ width: '29ch', marginBottom:'15px'}} variant="standard">
                     <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                     <Input
@@ -111,8 +115,6 @@ const LoginView = () => {
                     <p className={styles.orText}>or</p>
                     <div className={styles.dividerLine}></div>
                 </div>
-
-
 
             <button className={styles.google} onClick={handleGoogleSignIn}>
                 <img src="/google.png" alt="google" className={styles.googleIcon} />

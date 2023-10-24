@@ -26,13 +26,29 @@ const RegisterView = () => {
         event.preventDefault();
         setError('');
         setIsLoading(true);
+      
+        const email = event.target.email.value;
+        const userName = event.target.userName.value;
+        const userPassword = event.target.userPassword.value;
+        const userConfirmPassword = event.target.userConfirmPassword.value;
+      
+        if (!email || !userName || !userPassword || !userConfirmPassword) {
+          setError('Please fill all fields.');
+          setIsLoading(false);
+          return;
+        }
+        if (userPassword !== userConfirmPassword) {
+            setError("Your password and confirm password don't match.");
+            setIsLoading(false);
+            return;
+          }
         const data={
-            email:event.target.email.value,
-            userName:event.target.userName.value,
-            userPassword:event.target.userPassword.value,
-            userConfirmPassword:event.target.userConfirmPassword.value
+            email:email,
+            userName:userName,
+            userPassword:userPassword,
+            userConfirmPassword:userConfirmPassword,
+
         };
-        console.log(data);
         const result = await fetch('../api/register', {
             method: 'POST',
             headers: {
