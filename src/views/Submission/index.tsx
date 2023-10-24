@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { FormEvent, useState } from "react"
 import { ProductionHouseForm } from "../../components/fragments/submission/productionHouseData/ProductionHouseForm"
 import { DirectorDataForm } from "../../components/fragments/submission/directorData/DirectorDataForm"
 import { useMultistepForm } from "../../views/Submission/useMultistepForm"
 import { FilmDataForm } from "../../components/fragments/submission/filmData/FilmDataForm"
+import FilmTerms from "../../components/fragments/submission/filmTerms/FilmTerms"
 import styles from './SubmissionPage.module.css'
 import { useSession } from 'next-auth/react';
 
@@ -132,8 +133,11 @@ type FormDataType = {
           setError(result.status===400 ? "Email already exists" : "");
       }
   }
+
+  const [showModal, setShowModal] = useState(true);
   
   return (
+    <Fragment>
      <div className={styles.container}> 
       
       <form onSubmit={onSubmit} className={styles.myForm} method='POST'>
@@ -168,6 +172,8 @@ type FormDataType = {
         </div>
       </form>
     </div>
+    <FilmTerms isVisible={showModal} onClose={() => setShowModal(false)}/>
+    </Fragment>
   )
 }
 
