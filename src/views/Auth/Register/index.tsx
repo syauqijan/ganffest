@@ -15,6 +15,13 @@ const RegisterView = () => {
     const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
     };
+    const [showConfirmPassword, setShowConfirmPassword] = React.useState(false);
+
+    const handleClickShowConfirmPassword = () => setShowConfirmPassword((show) => !show);
+
+    const handleMouseDownConfirmPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+    };
     const handleSubmit = async (event: any) => {
         event.preventDefault();
         setError('');
@@ -84,17 +91,17 @@ const RegisterView = () => {
                         <InputLabel htmlFor="standard-adornment-password">Confirm Password</InputLabel>
                         <Input
                             id="userConfirmPassword"
-                            type={showPassword ? 'text' : 'password'}
+                            type={showConfirmPassword ? 'text' : 'password'}
                             placeholder='Confirm your password'
                             name="userConfirmPassword"
                             endAdornment={
                             <InputAdornment position="end">
                                 <IconButton
                                 aria-label="toggle password visibility"
-                                onClick={handleClickShowPassword}
-                                onMouseDown={handleMouseDownPassword}
+                                onClick={handleClickShowConfirmPassword}
+                                onMouseDown={handleMouseDownConfirmPassword}
                                 >
-                                {showPassword ? <VisibilityOff /> : <Visibility />}
+                                {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
                                 </IconButton>
                             </InputAdornment>
                             }
