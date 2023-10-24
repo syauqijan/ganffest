@@ -70,18 +70,7 @@ type FormDataType = {
   const SubmissionView = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
- 
-
-
-    // const[isLogin, setIsLogin] = React.useState(false)
     const {push} = useRouter();
-
-    // useEffect(() => {
-    //     if(!isLogin){
-    //         push('/auth/login');
-    //     }
-    // }, [isLogin])
-
     const [data, setData] = useState(INITIAL_DATA)
     function updateFields(fields: Partial<FormDataType>) {
       setData(prev => {
