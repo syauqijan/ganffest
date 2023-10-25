@@ -8,6 +8,7 @@ import { FilmDataForm } from "../../components/fragments/submission/filmData/Fil
 import FilmTerms from "../../components/fragments/submission/filmTerms/FilmTerms"
 import styles from './SubmissionPage.module.css'
 import { useSession } from 'next-auth/react';
+import Agreement from '@/components/fragments/submission/agreement'
 
 
 type FormDataType = {
@@ -102,10 +103,14 @@ type FormDataType = {
   //     body: JSON.stringify(data),
   // });
   const onSubmit = async (e: any) => {
+    setIsLoading(true);
+    
+
     e.preventDefault();
 
     // Check if it's the last step
     if (!isLastStep) return next();
+    if (isLastStep) return setShowPopup(true);
 
     // Add user's email to the data
     const dataWithUserEmail = {
@@ -135,6 +140,7 @@ type FormDataType = {
   }
 
   const [showModal, setShowModal] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
   
   return (
     <Fragment>
@@ -173,6 +179,7 @@ type FormDataType = {
       </form>
     </div>
     <FilmTerms isVisible={showModal} onClose={() => setShowModal(false)}/>
+    <Agreement isVisible={showPopup} onClose={() => setShowPopup(false)}/>
     </Fragment>
   )
 }
