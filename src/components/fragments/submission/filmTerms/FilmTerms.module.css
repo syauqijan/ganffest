@@ -34,13 +34,20 @@
     height: max-content;
     background-color: var(--primary);
     color: #F9F6D5;
-    padding: 0.5rem;
     border-radius: 10px;
     font-size: 1.25rem;
     box-shadow: 10px;
-    padding: 20px;
-    padding-left: 50px;
+    padding: 25px;
+}
+
+.rules{
+    padding-left: 40px;
     text-indent: -22px;
+}
+
+.definition{
+    padding-left: 15px;
+    text-indent: 0px;
 }
 
 .closeButton{

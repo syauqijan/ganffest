@@ -118,4 +118,10 @@
     transition: 0.3s;
   } */
   /* Add more styles as needed */
+@media only screen and (max-width: 500px){
+  .myForm{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
   

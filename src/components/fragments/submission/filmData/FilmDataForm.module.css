@@ -97,3 +97,38 @@
   }
 
   
+@media only screen and (max-width: 500px) {
+    .inputContainer{
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .inputContainerFirst{
+      width: 100%;
+    }
+
+    .inputContainerTwo{
+      width: 100%;
+    }
+
+    .inputContainerThree{
+      width: 100%;
+    }
+
+    .inputContainerFour{
+      flex-direction: column;
+      width: 100%;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .inputLink{
+      width: 100%;
+      gap: 0.25rem;
+    }
+
+    .inputLinkTwo{
+      width: 100%;
+      gap: 0px;
+    }
+}
