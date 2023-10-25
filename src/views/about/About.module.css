@@ -79,3 +79,24 @@
     width: 50%;
     font-weight: 700;
 }
+
+@media only screen and (max-width: 700px){
+    .gff{
+        flex-direction: column;
+    }
+
+    .flux{
+        flex-direction: column;
+    }
+
+    .textlfm, .textflux, .textgff{
+        width: 80%;
+        text-align: justify;
+        font-size: 15px;
+    }
+
+    .textlfm h1, .textflux h1, .textgff h1{
+        width: 90%;
+        font-size: 25px;
+    }
+}

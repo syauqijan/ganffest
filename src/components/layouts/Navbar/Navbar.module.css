@@ -19,6 +19,7 @@
     margin-left: 20px;
     margin-right: 20px;
     transition: 0.3s;
+    white-space: nowrap;
 }
 .navPage:hover{
     color: var(--secondary);

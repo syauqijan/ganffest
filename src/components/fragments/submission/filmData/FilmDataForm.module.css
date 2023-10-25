@@ -51,9 +51,15 @@
     gap: 0.5rem;
 
   }
-  .inputContainerThree input {
-    height: 100px;
-
+  .sinopsisBox {
+    height: 150px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    background-color: transparent;
+    transition: border-color 0.9s ;
   }
   /* Add more styles as needed */
   .radioButtons{
