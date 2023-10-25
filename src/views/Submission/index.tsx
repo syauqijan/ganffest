@@ -9,6 +9,7 @@ import FilmTerms from "../../components/fragments/submission/filmTerms/FilmTerms
 import styles from './SubmissionPage.module.css'
 import { useSession } from 'next-auth/react';
 import Agreement from '@/components/fragments/submission/agreement'
+import { set } from 'firebase/database'
 
 
 type FormDataType = {
@@ -91,53 +92,42 @@ type FormDataType = {
   ]);
 
   
-  // const onSubmit = async (e: any) => {
-  //   e.preventDefault();
-  //   if (!isLastStep) return next();
-  //   console.log(data)
-  //   const result = await fetch('../api/submission', {
-  //     method: 'POST',
-  //     headers: {
-  //         'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(data),
-  // });
   const onSubmit = async (e: any) => {
     setIsLoading(true);
-    
-
     e.preventDefault();
-
-    // Check if it's the last step
     if (!isLastStep) return next();
-    if (isLastStep) return setShowPopup(true);
+    setShowPopup(true);
 
-    // Add user's email to the data
+    
+  }
+  
+  const submitHandler = async (e:any) => {
+
+    setIsLoading(true);
+    setShowPopup(false);
     const dataWithUserEmail = {
-        ...data,
-        emailSubmitter: session?.user?.email || '', // Use the user's email from the session
+      ...data,
+      emailSubmitter: session?.user?.email || '',
     };
-
+  
     const result = await fetch('../api/submission', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dataWithUserEmail), // Include the user's email
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(dataWithUserEmail),
     });
   
+    if (result.status === 200) {
+      setIsLoading(false);
+      push('/');
+    } else {
+      console.log(result);
+      setIsLoading(false);
+      setError(result.status === 400 ? "Email already exists" : "");
+    }
+  };
   
-
-      if(result.status === 200){
-          e.target.reset();
-          setIsLoading(false);
-          push('/');
-      }else{
-          console.log(result);
-          setIsLoading(false);
-          setError(result.status===400 ? "Email already exists" : "");
-      }
-  }
 
   const [showModal, setShowModal] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
@@ -182,7 +172,14 @@ type FormDataType = {
       </form>
     </div>
     <FilmTerms isVisible={showModal} onClose={() => setShowModal(false)}/>
-    <Agreement isVisible={showPopup} onClose={() => setShowPopup(false)}/>
+    {/* <Agreement isVisible={showPopup} onClose={() => {setShowPopup(false), submitHandler}}/> */}
+    <Agreement isVisible={showPopup} onClose={() => { setShowPopup(false); submitHandler({}); }} onBack={() => setShowPopup(false)} />
+
+
+
+
+
+
     </Fragment>
   )
 }
