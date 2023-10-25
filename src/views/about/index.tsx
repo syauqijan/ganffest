@@ -4,6 +4,9 @@ import styles from './About.module.css'
 const AboutView = () => {
   return (
     <div className={styles.container}>
+      <title>
+        About Ganffest
+      </title>
       <div className={styles.gff}>
         <div className={styles.logogff}>
             <Image src='/gff.svg' alt='logo-gff' width={300} height={300} />

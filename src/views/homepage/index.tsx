@@ -11,6 +11,9 @@ import AcaraFragment from '@/components/fragments/acara'
 const HomepageView = () => {
     return (
         <div className={styles.homepage}>
+        <title>
+          Ganesha Film Festival
+        </title>
           {/* <div className={styles.header}>
           <h1 className={styles.calling}>Get ready! An interesting event will open soon!</h1>
           </div>

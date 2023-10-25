@@ -145,7 +145,9 @@ type FormDataType = {
   return (
     <Fragment>
      <div className={styles.container}> 
-      
+     <title>
+        Film Submission
+      </title>
       <form onSubmit={onSubmit} className={styles.myForm} method='POST'>
         <div className={styles.headerForm}>
         <h1>FORM SUBMISSION</h1>
