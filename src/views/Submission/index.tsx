@@ -161,7 +161,8 @@ type FormDataType = {
             <div className={styles.titleText}>
             {currentStepIndex === 0 && <h1>Film Data</h1>}
             {currentStepIndex === 1 && <h1>Director Data</h1>}
-            {currentStepIndex === 2 && <h1>Production House and Producer Data</h1>}
+            {currentStepIndex === 2 && window.screen.width >= 700 && <h1>Production House and Producer Data</h1>}
+            {currentStepIndex === 2 && window.screen.width < 700 && <h1>PH and Producer Data</h1>}
             </div>
           </div>
           <div className={styles.stepCounter}>
