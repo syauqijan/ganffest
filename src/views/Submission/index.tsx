@@ -10,7 +10,7 @@ import styles from './SubmissionPage.module.css'
 import { useSession } from 'next-auth/react';
 import Agreement from '@/components/fragments/submission/agreement'
 import { set } from 'firebase/database'
-import FinishPopUp from '@/components/fragments/submission/finishpopup'
+import PopUp from '@/components/fragments/popup'
 
 
 type FormDataType = {
@@ -120,6 +120,8 @@ type FormDataType = {
     });
   
     if (result.status === 200) {
+      setFinishTitle("Submission success");
+      setFinishMessage(dataWithUserEmail.judul_film + " has been submitted!")
       setShowFinishPopup(true);
     } else {
       console.log(result);
@@ -132,6 +134,8 @@ type FormDataType = {
   const [showModal, setShowModal] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
   const [showFinishPopup, setShowFinishPopup] = useState(false);
+  const [FinishMessage, setFinishMessage] = useState("");
+  const [FinishTitle, setFinishTitle] = useState("");
   
   return (
     <Fragment>
@@ -175,7 +179,7 @@ type FormDataType = {
     <FilmTerms isVisible={showModal} onClose={() => setShowModal(false)}/>
     {/* <Agreement isVisible={showPopup} onClose={() => {setShowPopup(false), submitHandler}}/> */}
     <Agreement isVisible={showPopup} onClose={() => { setShowPopup(false); submitHandler({}); }} onBack={() => setShowPopup(false)} />
-    <FinishPopUp isVisible={showFinishPopup} onClose={() => { setIsLoading(false);push('/');}} />
+    <PopUp isVisible={showFinishPopup} onClose={() => { setIsLoading(false);push('/');}} message={FinishMessage} messageTitle={FinishTitle}/>
 
 
 

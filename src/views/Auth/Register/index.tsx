@@ -4,7 +4,7 @@ import styles from './Register.module.css'
 import { useRouter } from 'next/router';
 import { FormControl, IconButton, Input, InputAdornment, InputLabel, TextField } from '@mui/material';
 import { VisibilityOff, Visibility } from '@mui/icons-material';
-import RegisterPopUp from '@/components/fragments/popup/registerpopup'
+import PopUp from '@/components/fragments/popup'
 const RegisterView = () => {
     const [isLoading, setIsLoading] = useState(false);
     const {push} = useRouter();
@@ -61,6 +61,8 @@ const RegisterView = () => {
 
             if(result.status === 200){
                 event.target.reset();
+                setPopUpTitle("Register Success");
+                setPopUpMessage("Welcome "+userName+ "!");
                 setShowRegisterFinishPopup(true);
             }else{
                 console.log(result);
@@ -71,7 +73,8 @@ const RegisterView = () => {
 
     //register popup usestate
     const [showRegisterFinishPopup, setShowRegisterFinishPopup] = useState(false);
-
+    const [popUpMessage, setPopUpMessage] = useState("");
+    const [popUpTitle, setPopUpTitle] = useState("");
     return (
         <div id="tsparticles">
             <main className={styles.box}>
@@ -136,7 +139,10 @@ const RegisterView = () => {
                     Have an account? <Link className={styles.loginLink} href="/auth/login">Login</Link>
                 </p>
             </form>
-            <RegisterPopUp isVisible = {showRegisterFinishPopup} onClose={() => {setIsLoading(false);push('/auth/login');}}/>
+            <PopUp isVisible = {showRegisterFinishPopup} 
+            onClose={() => {setIsLoading(false);push('/auth/login');}} 
+            message={popUpMessage}
+            messageTitle={popUpTitle}/>
             </main>
         </div>
     )
