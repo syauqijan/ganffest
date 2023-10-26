@@ -4,6 +4,7 @@ import styles from './Register.module.css'
 import { useRouter } from 'next/router';
 import { FormControl, IconButton, Input, InputAdornment, InputLabel, TextField } from '@mui/material';
 import { VisibilityOff, Visibility } from '@mui/icons-material';
+import RegisterPopUp from '@/components/fragments/popup/registerpopup'
 const RegisterView = () => {
     const [isLoading, setIsLoading] = useState(false);
     const {push} = useRouter();
@@ -60,14 +61,17 @@ const RegisterView = () => {
 
             if(result.status === 200){
                 event.target.reset();
-                setIsLoading(false);
-                push('/auth/login');
+                setShowRegisterFinishPopup(true);
             }else{
                 console.log(result);
                 setIsLoading(false);
                 setError(result.status===400 ? "Email already exists" : "");
             }
     }
+
+    //register popup usestate
+    const [showRegisterFinishPopup, setShowRegisterFinishPopup] = useState(false);
+
     return (
         <div id="tsparticles">
             <main className={styles.box}>
@@ -132,6 +136,7 @@ const RegisterView = () => {
                     Have an account? <Link className={styles.loginLink} href="/auth/login">Login</Link>
                 </p>
             </form>
+            <RegisterPopUp isVisible = {showRegisterFinishPopup} onClose={() => {setIsLoading(false);push('/auth/login');}}/>
             </main>
         </div>
     )
