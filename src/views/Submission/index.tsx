@@ -10,6 +10,7 @@ import styles from './SubmissionPage.module.css'
 import { useSession } from 'next-auth/react';
 import Agreement from '@/components/fragments/submission/agreement'
 import { set } from 'firebase/database'
+import FinishPopUp from '@/components/fragments/submission/finishpopup'
 
 
 type FormDataType = {
@@ -119,8 +120,7 @@ type FormDataType = {
     });
   
     if (result.status === 200) {
-      setIsLoading(false);
-      push('/');
+      setShowFinishPopup(true);
     } else {
       console.log(result);
       setIsLoading(false);
@@ -131,6 +131,7 @@ type FormDataType = {
 
   const [showModal, setShowModal] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
+  const [showFinishPopup, setShowFinishPopup] = useState(false);
   
   return (
     <Fragment>
@@ -174,6 +175,7 @@ type FormDataType = {
     <FilmTerms isVisible={showModal} onClose={() => setShowModal(false)}/>
     {/* <Agreement isVisible={showPopup} onClose={() => {setShowPopup(false), submitHandler}}/> */}
     <Agreement isVisible={showPopup} onClose={() => { setShowPopup(false); submitHandler({}); }} onBack={() => setShowPopup(false)} />
+    <FinishPopUp isVisible={showFinishPopup} onClose={() => { setIsLoading(false);push('/');}} />
 
 
 
