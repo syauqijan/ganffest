@@ -13,9 +13,18 @@
 .box{
     width: 600px;
     height: fit-content;
-    background-color: transparent;
+    background-color: var(--primary);
     border-radius: 10px;
     padding: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.line{
+    width: 500px;
+    height: 1px;
+    background: var(--tertiary);
 }
 
 .header{
@@ -24,7 +33,7 @@
     color: var(--tertiary);
     padding: 0.5rem;
     border-radius: 10px;
-    font-size: 2.25rem;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
     box-shadow: 10px;
@@ -35,15 +44,28 @@
     height: max-content;
     background-color: var(--primary);
     color: #F9F6D5;
-    padding: 0.5rem;
     border-radius: 10px;
-    font-size: 1.25rem;
+    font-size: 18px;
     box-shadow: 10px;
-    padding: 20px;
-    padding-left: 50px;
+    padding: 25px;
+}
+
+.rules{
+    padding-left: 40px;
     text-indent: -22px;
 }
 
+.definition{
+    padding-left: 15px;
+    text-indent: 0px;
+    margin-bottom: 5px;
+}
+.button{
+    display: flex;
+    justify-content: space-between;
+    gap: 200px;
+    margin-bottom:10px;
+}
 .closeButton{
     float: right;
     margin-top: 10px;
@@ -58,4 +80,14 @@
     background: linear-gradient(to right, #4863D8 , #4863D8);
     border-radius: 10px;
     padding: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+    .header{
+        font-size: x-large;
+    }
+
+    .content{
+        font-size: medium;
+    }
 }

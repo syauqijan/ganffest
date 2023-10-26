@@ -61,7 +61,7 @@ const RegisterView = () => {
 
             if(result.status === 200){
                 event.target.reset();
-                setPopUpTitle("Register Success");
+                setPopUpTitle("Successfully registered");
                 setPopUpMessage("Welcome "+userName+ "!");
                 setShowRegisterFinishPopup(true);
             }else{

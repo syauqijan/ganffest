@@ -10,11 +10,14 @@
 }
 
 .box{
-    width: 600px;
+    width: 500px;
     height: fit-content;
-    background-color: transparent;
+    background-color: var(--primary);
     border-radius: 10px;
     padding: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .header{
@@ -23,38 +26,41 @@
     color: var(--tertiary);
     padding: 0.5rem;
     border-radius: 10px;
-    font-size: 2.25rem;
-    font-weight: bold;
+    font-size: 20px;
     text-align: center;
     box-shadow: 10px;
 }
-
-.content{
+.line{
+    width: 250px;
     margin-top: 10px;
+    background-color: var(--tertiary);
+    height: 1px; 
+
+}
+.content{
+
     height: max-content;
     background-color: var(--primary);
-    color: #F9F6D5;
+    color: var(--tertiary);
     padding: 0.5rem;
     border-radius: 10px;
-    font-size: 1.25rem;
+    font-size: 20px;
     box-shadow: 10px;
     padding: 20px;
     padding-left: 50px;
     text-indent: -22px;
+    text-align: center;
 }
 
 .closeButton{
-    float: right;
-    margin-top: 10px;
-    background: linear-gradient(to right, #4863D8 , #4863D8);
+    background: var(--secondary);
     border-radius: 10px;
-    padding: 10px;
+    height: 40px;
+    width: 80px;
+    text-align: center;
+    font-size: 16px;
 }
+.closeButton p {
 
-.backButton{
-    float: left;
-    margin-top: 10px;
-    background: linear-gradient(to right, #4863D8 , #4863D8);
-    border-radius: 10px;
-    padding: 10px;
+    font-size: 14px;
 }

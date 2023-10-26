@@ -9,6 +9,7 @@ const FilmTerms = ({isVisible, onClose}:any) => {
         <h1 className={styles.header}>
         Ketentuan Film
         </h1>
+        <div className={styles.line}></div>
         <ol className={styles.content}>
           <li className={styles.definition}>Film Pendek adalah : Film berdurasi maksimal 45 menit termasuk dengan credits scene</li>
           <li className={styles.rules}>1. Resolusi film minimal 1080p atau setaranya</li>

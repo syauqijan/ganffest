@@ -8,11 +8,13 @@ const PopUp = ({ isVisible, onClose, message, messageTitle }: any) => {
         <h1 className={styles.header}>
         {messageTitle}
         </h1>
+  
+        <div className={styles.line}></div>
         <ol className={styles.content}>
           <p>{message}</p>
         </ol>
         <button className={styles.closeButton} onClick={() => onClose()}>
-          Continue
+          <p>Continue</p>
         </button>
       </div>
     </div>  
