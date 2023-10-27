@@ -82,13 +82,13 @@ const RegisterView = () => {
             {error && <p className={styles.error}>{error}</p>}
             <form className={styles.registerForm} onSubmit={handleSubmit} method="POST">
                 <div className={styles.inputBox}>
-                    <TextField sx={{ width: '29ch', marginBottom:'15px' }} id="email" label="Email" placeholder="Type your email" variant="standard" />
+                    <TextField sx={{ width: '23ch', marginBottom:'15px' }} id="email" label="Email" placeholder="Type your email" variant="standard" />
                 </div>
                 <div className={styles.inputBox}>
-                    <TextField sx={{ width: '29ch', marginBottom:'15px' }} id="userName" label="Username" placeholder="Type your username" variant="standard" />
+                    <TextField sx={{ width: '23ch', marginBottom:'15px' }} id="userName" label="Username" placeholder="Type your username" variant="standard" />
                 </div>
                 <div className={styles.inputBox}>
-                    <FormControl sx={{ width: '29ch', marginBottom:'15px'}} variant="standard">
+                    <FormControl sx={{ width: '23ch', marginBottom:'15px'}} variant="standard">
                         <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                         <Input
                             id="userPassword"
@@ -110,7 +110,7 @@ const RegisterView = () => {
                     </FormControl>
                 </div>
                 <div className={styles.inputBox}>
-                    <FormControl sx={{ width: '29ch', marginBottom:'15px'}} variant="standard">
+                    <FormControl sx={{ width: '23ch', marginBottom:'15px'}} variant="standard">
                         <InputLabel htmlFor="standard-adornment-password">Confirm Password</InputLabel>
                         <Input
                             id="userConfirmPassword"

@@ -76,11 +76,11 @@ const LoginView = () => {
             {error && <p className={styles.error}>{error}</p>}
             <form className={styles.loginForm} onSubmit={handleSubmit} method="POST">
                 <div className={styles.inputBox}>
-                    <TextField sx={{ width: '29ch', marginBottom:'15px' }} id="email" label="Email" placeholder="Type your email" variant="standard" />
+                    <TextField sx={{ width: '23ch', marginBottom:'15px' }} id="email" label="Email" placeholder="Type your email" variant="standard" />
                 </div>
                 
                 <div className={styles.inputBox}>
-                        <FormControl sx={{ width: '29ch', marginBottom:'15px'}} variant="standard">
+                        <FormControl sx={{ width: '23ch', marginBottom:'15px'}} variant="standard">
                     <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                     <Input
                         id="userPassword"
@@ -90,6 +90,7 @@ const LoginView = () => {
                         endAdornment={
                         <InputAdornment position="end">
                             <IconButton
+                            className={styles.iconButton}
                             aria-label="toggle password visibility"
                             onClick={handleClickShowPassword}
                             onMouseDown={handleMouseDownPassword}

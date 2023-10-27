@@ -18,8 +18,10 @@
 
 .highlightEvent {
   width: fit-content;
-  height: 400px;
-  padding: 10px;
+  height: 340px;
+  padding-left: 30px;
+  padding-right: 30px;
+
   /* border: 1px solid #ddd; */
   border-radius: 30px;
   text-align: center;

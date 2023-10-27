@@ -9,6 +9,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 338px;
 
 
 }
@@ -19,6 +20,7 @@
     color: #000000;
     /* font-weight: bold; */
     text-align: center;
+    
     
 }
 
@@ -32,6 +34,9 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    width:260px;
+    height: 250px;
+    
 }
 .box .inputBox input {
     background: transparent;
@@ -42,8 +47,10 @@
     letter-spacing: 1px;
     margin: 0px;
     outline: none;
+    display: flex;
+    
     /* padding: 10px 0; */
-    width: 200px;
+    
 }
 
 .box input[type="submit"], .box button[type="submit"], a.button {
