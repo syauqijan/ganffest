@@ -14,8 +14,10 @@ const Slider = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.watchButton}
-          >
+          ><p className={styles.watchYt}>
             Watch on YouTube
+
+          </p>
           </a>
         </div>
         <div data-src='/c4.jpg'>

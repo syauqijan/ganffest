@@ -7,7 +7,7 @@ const AboutView = () => {
       <title>
         About Ganffest
       </title>
-      <div className={styles.gff}>
+      {/* <div className={styles.gff}>
         <div className={styles.logogff}>
             <Image src='/gff.svg' alt='logo-gff' width={300} height={300} />
         </div>
@@ -19,7 +19,7 @@ const AboutView = () => {
           <br></br>
           <p>Sebagai pelaku ekosistem perfilman, Ganffest berupaya untuk memberikan ruang eksibisi serta stimulus bagi produksi film pendek di Indonesia. Adapun sebagai misi kebudayaan, Ganffest juga berharap memberikan ruang hiburan alternatif bagi masyarakat umum sehingga lebih mengetahui film-film pendek produksi anak bangsa.</p>
         </div>
-      </div>
+      </div> */}
       <div className={styles.lfm}>
         <div className={styles.textlfm}>
           <h1 > Liga Film Mahasiswa</h1>

@@ -1,31 +1,33 @@
 .sliderContainer{
     width: 100%;
-    height: 1000px;
+    height: 700px;
     overflow: hidden;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    position: relative;
     z-index: 0;
 
 }
 .watchButton {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff; /* Warna latar belakang tombol */
-    color: #fff; /* Warna teks tombol */
+    bottom: 180px;
+    right: 200px;
+    background-color: #eee5e5; /* Warna latar belakang tombol */
+    color: var(--primary); /* Warna teks tombol */
     padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
     transition: background-color 0.3s;
     z-index: 1;
+    font-weight: bold;
+    font-size: 20px;
   }
   
   .watchButton:hover {
-    background-color: #0056b3; /* Warna latar belakang tombol saat dihover */
+    background-color: #000000;
+    color: #eee5e5; /* Warna latar belakang tombol saat dihover */
   }
+
   
   
   
