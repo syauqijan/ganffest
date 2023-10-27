@@ -29,7 +29,7 @@ const HomepageView = () => {
           <CountdownTimer/> */}
           <Slider/>
           <AcaraFragment/>
-          <Timeline/>
+          {/* <Timeline/> */}
           <Highlight/>
           {/* <Gallery images={images}/> */}
           

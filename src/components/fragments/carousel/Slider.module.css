@@ -28,7 +28,26 @@
     color: #eee5e5; /* Warna latar belakang tombol saat dihover */
   }
 
-  
+  @media screen and (max-width: 550px){
+    .sliderContainer{
+      height: 530px;
+    }
+    .watchButton{
+      bottom: 40px;
+      right: 20px;
+      font-size: 11px;
+    }
+  }
+  @media screen and (min-width: 551px) and (max-width: 768px){
+    .sliderContainer{
+      height: 600px;
+    }
+    .watchButton{
+      bottom: 40px;
+      right: 20px;
+      font-size: 14px;
+    }
+  }
   
   
   
