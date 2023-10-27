@@ -68,7 +68,7 @@ const LoginView = () => {
     return (
         <div id="tsparticles">
             <main className={styles.box}>
-            <h2>Login</h2>
+            <h2>LOGIN</h2>
             {/* <div className={styles.logo}>
                 <img src="/logonavbar.svg" alt="Logo" className={styles.logo} />
                 
@@ -76,11 +76,11 @@ const LoginView = () => {
             {error && <p className={styles.error}>{error}</p>}
             <form className={styles.loginForm} onSubmit={handleSubmit} method="POST">
                 <div className={styles.inputBox}>
-                    <TextField sx={{ width: '23ch', marginBottom:'15px' }} id="email" label="Email" placeholder="Type your email" variant="standard" />
+                    <TextField sx={{ width: '26ch', marginBottom:'15px' }} id="email" label="Email" placeholder="Type your email" variant="standard" />
                 </div>
                 
                 <div className={styles.inputBox}>
-                        <FormControl sx={{ width: '23ch', marginBottom:'15px'}} variant="standard">
+                        <FormControl sx={{ width: '26ch', marginBottom:'15px'}} variant="standard">
                     <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                     <Input
                         id="userPassword"

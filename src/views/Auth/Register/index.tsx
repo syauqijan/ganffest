@@ -78,17 +78,17 @@ const RegisterView = () => {
     return (
         <div id="tsparticles">
             <main className={styles.box}>
-            <h2>Register</h2>
+            <h2>REGISTER</h2>
             {error && <p className={styles.error}>{error}</p>}
             <form className={styles.registerForm} onSubmit={handleSubmit} method="POST">
                 <div className={styles.inputBox}>
-                    <TextField sx={{ width: '23ch', marginBottom:'15px' }} id="email" label="Email" placeholder="Type your email" variant="standard" />
+                    <TextField sx={{ width: '26ch', marginBottom:'15px' }} id="email" label="Email" placeholder="Type your email" variant="standard" />
                 </div>
                 <div className={styles.inputBox}>
-                    <TextField sx={{ width: '23ch', marginBottom:'15px' }} id="userName" label="Username" placeholder="Type your username" variant="standard" />
+                    <TextField sx={{ width: '26ch', marginBottom:'15px' }} id="userName" label="Username" placeholder="Type your username" variant="standard" />
                 </div>
                 <div className={styles.inputBox}>
-                    <FormControl sx={{ width: '23ch', marginBottom:'15px'}} variant="standard">
+                    <FormControl sx={{ width: '26ch', marginBottom:'15px'}} variant="standard">
                         <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                         <Input
                             id="userPassword"
@@ -110,7 +110,7 @@ const RegisterView = () => {
                     </FormControl>
                 </div>
                 <div className={styles.inputBox}>
-                    <FormControl sx={{ width: '23ch', marginBottom:'15px'}} variant="standard">
+                    <FormControl sx={{ width: '26ch', marginBottom:'15px'}} variant="standard">
                         <InputLabel htmlFor="standard-adornment-password">Confirm Password</InputLabel>
                         <Input
                             id="userConfirmPassword"
@@ -133,7 +133,7 @@ const RegisterView = () => {
                     
                 </div>
                 <button type="submit" name="" disabled={isLoading}>
-                    {isLoading ? "Loading..." : "Register"}
+                    {isLoading ? "Loading..." : "Sign Up"}
                 </button>
                 <p className={styles.registerText}>
                     Have an account? <Link className={styles.loginLink} href="/auth/login">Login</Link>
