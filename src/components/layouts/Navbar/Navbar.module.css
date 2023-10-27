@@ -1,7 +1,6 @@
 .navbar{
     display: flex;
     width: 100%;
-    /* height: 24vh; */
     color: var(--secondary);
 }
 .navbarContainer{
@@ -12,12 +11,14 @@
     justify-content: space-between;
     align-items: center;
 }
-
-@media screen and (max-width: 700px) {
-    .logo {
-        display: none;
-    }
+.hamburger{
+    display: none;
 }
+
+.dropdownWrapMobile{
+    display: none;
+}
+
 
 .navPage{
     color: white;
@@ -31,23 +32,11 @@
     transition: 0.3s;
 }
 .buttonAuth{
-    /* background: linear-gradient(to right, #F9F6D5 1%, #4863D8);
-    color: rgb(0, 0, 0);
-    font-size: 14px;
-    padding: 10px;
-    border-radius: 10px;
-    width: 100px; */
     background-color: rgb(255, 255, 255);
-
     color: #000000;
     border-radius: 10px;
-    /* border-image: linear-gradient(to right, #F9F6D5, #4863D8);
-    border-image-slice: 1;
-    border-image-width: 1.5px ; */
     border: none;
     padding: 10px;
-    /* font-size: 16px;
-    font-weight: 100; */
     cursor: pointer;
     width: 100px;
     height: 40px;
@@ -74,7 +63,7 @@
 
 }
 .boldLink{
-    font: bold;
+    font-weight: bold;
 }
 
 .avatar{
@@ -128,16 +117,84 @@
     display: flex;
 }
 
-/* Tampilkan dropdown jika dropdownVisible true */
 .dropdownVisible .dropdown {
     display: flex;
 }
 
 .activeLink {
-    /* Atur gradient linear sesuai keinginan Anda */
     border-image: linear-gradient(to right, #F9F6D5, #4863D8);
     border-image-slice: 1;
-    border-image-width: 0 0 1.5px 0; /* Atur ketebalan border sesuai keinginan Anda */
+    border-image-width: 0 0 1.5px 0; 
+
 }
-  
-  
+
+@media screen and (max-width: 700px) {
+.navPage{
+    display: none;
+}
+.authButton{
+    display: none;
+}
+.logo{
+    height: 60px;
+    width: 150px;
+}
+.hamburger{
+    display: block;
+    cursor: pointer;
+}
+
+.dropdownWrapMobile {
+    display: block;
+    position: fixed;
+    top: 100px; 
+    right: 0; 
+    background-color: black;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    z-index: 3; 
+    width: 90%; 
+    margin: 0 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdownMobile {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.navPageMobile {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.navPageMobile:hover {
+    background-color: #f0f0f0; /* Ganti warna latar belakang hover sesuai kebutuhan */
+}
+
+.buttonSignout {
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+}
