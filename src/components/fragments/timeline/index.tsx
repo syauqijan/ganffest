@@ -26,11 +26,8 @@ const Timeline = () => {
         const windowHeight = window.innerHeight;
         const lineTop = rect.top;
 
-        
-        // Menghitung tinggi garis berdasarkan posisi scroll
         let lineHeight = Math.max(0, windowHeight - lineTop);
 
-        // Batasi tinggi garis sesuai dengan maksimum yang diinginkan
         if (lineHeight > maxLineHeight) {
           lineHeight = maxLineHeight;
         }
@@ -48,9 +45,9 @@ const Timeline = () => {
     <div className={styles.container}>
       <div className={styles.topSection}>
         <h1 className={styles.timelineTitle}>Timeline GFF 2024</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus iusto consequatur natus voluptatibus distinctio quo tenetur placeat nihil? Eligendi dolore consequatur eveniet commodi illum obcaecati assumenda distinctio blanditiis? Beatae?
-          </p>
+          {/* <p>
+            Don't miss our timeline!
+          </p> */}
       </div>
       <div className={styles.timeline} >
       <div ref={lineRef} className={styles.line}>

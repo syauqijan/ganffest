@@ -1,10 +1,13 @@
 .container{
   padding: 2rem;
   padding-bottom: 100px;
-  margin: auto;
-  flex: auto;
+  margin-left: 100px;
+  margin-right: 100px;
+
+  /* flex: auto; */
   justify-content: center;
   color: var(--tertiary);
+  width: 700px;
 }
 
 .topSection{

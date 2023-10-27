@@ -1,11 +1,33 @@
 .sliderContainer{
     width: 100%;
-    height: 650px;
+    height: 1000px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 1;
+    z-index: 0;
 
 }
+.watchButton {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff; /* Warna latar belakang tombol */
+    color: #fff; /* Warna teks tombol */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    z-index: 1;
+  }
+  
+  .watchButton:hover {
+    background-color: #0056b3; /* Warna latar belakang tombol saat dihover */
+  }
+  
+  
+  
+  
+  
