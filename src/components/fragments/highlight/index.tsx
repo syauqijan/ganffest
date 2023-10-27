@@ -10,7 +10,7 @@ const Highlight = () => {
       <div className={styles.highlightEvent} data-aos="zoom-in-right">
         <div className={styles.highlightImageContainer}>
         <img
-          src="/c1.jpg"
+          src="/roadshow.jpg"
           alt="Event 1"
           className={styles.highlightImage}
         />
@@ -27,7 +27,7 @@ const Highlight = () => {
       <div className={styles.highlightEvent} data-aos="zoom-in-left">
         <div className={styles.highlightImageContainer}>
         <img
-          src="/c2.jpg"
+          src="/g6.jpg"
           alt="Event 2"
           className={styles.highlightImage}
         />
@@ -43,7 +43,7 @@ const Highlight = () => {
       <div className={styles.highlightEvent} data-aos="zoom-in-right">
         <div className={styles.highlightImageContainer}>
         <img
-          src="/c3.jpg"
+          src="/g2.jpg"
           alt="Event 3"
           className={styles.highlightImage}
         />

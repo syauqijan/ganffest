@@ -7,34 +7,24 @@
     justify-content: space-between;
   }
   
-  /* Styling untuk teks di dalam footer */
-  .text-2xs {
-    font-size: 0.625rem; 
-    margin-bottom: 0.25rem; /* Ruang antara paragraf */
-  }
-  
-  .text-xs {
-    font-size: 0.75rem; 
-    margin-bottom: 0.25rem; 
-  }
-  
-  .contentScomed{
-    display: flex;
-    flex-direction: row;
-    /* justify-content: space-between; */
-    gap: 30px;
-    align-items: center;
-    justify-content: center;
-    
-  }
 
-  .socmed{
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-    font-weight: bold;
-    color: #222536;
-  }
+.contentScomed{
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.socmed{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  font-weight: bold;
+  color: #222536;
+}
 .address{
   font-size: 14px;
 }
@@ -42,4 +32,30 @@
   font-size:16px;
   font-weight: bold;
   
+}
+
+@media screen and (max-width: 550px){
+  .footerContainer{
+    padding: 0.5rem;
+  }
+  .addressContainer{
+    padding-right: 5px;
+  }
+  .title{
+    font-size: 14px;
+  }
+  .address{
+    font-size: 12px;
+  }
+  .titleSocmed{
+    font-size: 14px;
+  }
+  .socialIcon{
+    width: 20px;
+    height: 20px;
+  }
+  .socmed{
+
+    text-align: center;
+  }
 }

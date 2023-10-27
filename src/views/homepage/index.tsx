@@ -13,14 +13,7 @@ import image1 from '../../../public/c1.jpg';
 import image2 from '../../../public/c2.jpg';
 import image3 from '../../../public/c3.jpg';
 import image4 from '../../../public/c1.jpg';
-import image5 from '../../../public/c2.jpg';
-import image6 from '../../../public/c3.jpg';
-import image7 from '../../../public/c1.jpg';
-import image8 from '../../../public/c2.jpg';
-import image9 from '../../../public/c3.jpg';
-import image10 from '../../../public/c1.jpg';
-import image11 from '../../../public/c2.jpg';
-import image12 from '../../../public/c3.jpg';
+
 
 const images = [image1, image2, image3, image4].map(image => image.src);
 
@@ -38,7 +31,7 @@ const HomepageView = () => {
           <AcaraFragment/>
           <Timeline/>
           <Highlight/>
-          <Gallery images={images}/>
+          {/* <Gallery images={images}/> */}
           
         </div>
       )
