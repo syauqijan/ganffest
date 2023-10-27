@@ -112,4 +112,17 @@
     flex: 0 1 auto;
     min-width: 100%;
   }
+
+  .highlightHeader {
+    font-size: 25px;
+    text-align: center;
+  }
+  .highlightTitle {
+    font-size: 20px;
+
+  }
+  .highlightDescription {
+    font-size: 15px;
+
+  }
 }

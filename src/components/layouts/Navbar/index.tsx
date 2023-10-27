@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { signIn, signOut, useSession } from 'next-auth/react'
 import styles from './Navbar.module.css'
 import Link from 'next/link'
@@ -20,7 +20,11 @@ const Navbar = () => {
     };
     const toggleDropdownMobile = () => {
       setDropdownMobileVisible(!dropdownMobileVisible);
-    }
+    };
+    const handleNavPageMobileClick = () => {
+      // Set dropdownMobileVisible menjadi false saat salah satu navPageMobile diklik
+      setDropdownMobileVisible(false);
+    };
     return (
         <div className={styles.navbar} style={{ position: router.pathname === '/' ? 'absolute' : 'relative', zIndex: 2 }}>
             
@@ -31,7 +35,7 @@ const Navbar = () => {
         </div>
         <div className={styles.contentNavbar}>
           
-        <Link href="/" className={`${styles.navPage} ${router.pathname === '/' ? styles.activeLink : ''}`}>
+        <Link href="/" className={`${styles.navPage} ${router.pathname === '/' ? styles.activeLink : ''}`} >
           Homepage
         </Link>
         <Link href="/submission" className={`${styles.navPage} ${router.pathname === '/submission' ? styles.activeLink : ''}`}>
@@ -83,17 +87,17 @@ const Navbar = () => {
           {dropdownMobileVisible && (
                 <div className={styles.dropdownWrapMobile} onClick={() => closeDropdown()}>
                   <div className={styles.dropdownMobile}>
-                  <Link href="/" className={`${styles.navPageMobile} ${router.pathname === '/' ? styles.boldLink : ''}`}>
+                  <Link href="/" className={`${styles.navPageMobile} ${router.pathname === '/' ? styles.boldLink : ''}`} onClick={handleNavPageMobileClick}>
                     Homepage
                   </Link>
-                  <Link href="/submission" className={`${styles.navPageMobile} ${router.pathname === '/submission' ? styles.boldLink : ''}`}>
+                  <Link href="/submission" className={`${styles.navPageMobile} ${router.pathname === '/submission' ? styles.boldLink : ''}`} onClick={handleNavPageMobileClick}>
                     Submission
                   </Link>
-                  <Link href="/about" className={`${styles.navPageMobile} ${router.pathname === '/about' ? styles.boldLink : ''}`}>
+                  <Link href="/about" className={`${styles.navPageMobile} ${router.pathname === '/about' ? styles.boldLink : ''}`} onClick={handleNavPageMobileClick}>
                     About Us
                   </Link>
                   {data ? (
-                          <button className={styles.buttonSignout} onClick={() => signOut()}>Sign Out</button>
+                          <button className={styles.buttonSignout} onClick={() => signOut()} >Sign Out</button>
                   ) : (
                     <button className={styles.buttonAuth} onClick={() => signIn()}>
                       <p>Sign In</p>
