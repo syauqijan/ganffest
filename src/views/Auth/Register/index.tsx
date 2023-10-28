@@ -65,7 +65,6 @@ const RegisterView = () => {
                 setPopUpMessage("Welcome "+userName+ "!");
                 setShowRegisterFinishPopup(true);
             }else{
-                console.log(result);
                 setIsLoading(false);
                 setError(result.status===400 ? "Email already exists" : "");
             }

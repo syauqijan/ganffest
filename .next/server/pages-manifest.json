@@ -1,15 +1,15 @@
 {
   "/_app": "pages/_app.js",
-  "/about": "pages/about.html",
-  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
-  "/api/register": "pages/api/register.js",
-  "/api/submission": "pages/api/submission.js",
-  "/auth/login": "pages/auth/login.html",
-  "/auth/register": "pages/auth/register.html",
   "/404": "pages/404.html",
-  "/submission": "pages/submission.html",
+  "/about": "pages/about.html",
+  "/api/register": "pages/api/register.js",
+  "/auth/login": "pages/auth/login.html",
+  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
+  "/auth/register": "pages/auth/register.html",
   "/": "pages/index.html",
+  "/api/submission": "pages/api/submission.js",
   "/profile": "pages/profile.html",
+  "/submission": "pages/submission.html",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js"
 }

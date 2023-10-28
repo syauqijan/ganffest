@@ -28,11 +28,6 @@ const authOptions: NextAuthOptions = {
                 }
                 const user : any = await signIn({email});
                 if(user){
-                    console.log(user);
-                    console.log(password);
-                    console.log(user.email)
-                    console.log(user.userName)
-                    console.log(user.userPassword)
                     const passwordConfirm = await compare(password, user.userPassword);
                     if(password===user.userPassword){
                         return user;
@@ -69,14 +64,14 @@ const authOptions: NextAuthOptions = {
                 };
                 await signInWithGoogle(data, (result : any) => {
                     if(result.status){
-                        console.log(result);
+                   
                         token.email = result.data.email;
                         token.username = result.data.username;
                         token.image = result.data.image;
                         token.type = result.data.type;
                     }
                     else{
-                        console.log(result);
+                    
                     }
                 });
     
@@ -98,7 +93,7 @@ const authOptions: NextAuthOptions = {
                 session.user.image = token.image;
             }
 
-            console.log(session);
+         
             return session;
         }
     },

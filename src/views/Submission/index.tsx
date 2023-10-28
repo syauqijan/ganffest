@@ -125,7 +125,6 @@ type FormDataType = {
       setFinishMessage(dataWithUserEmail.judul_film + " has been submitted!")
       setShowFinishPopup(true);
     } else {
-      console.log(result);
       setIsLoading(false);
       setError(result.status === 400 ? "Email already exists" : "");
     }

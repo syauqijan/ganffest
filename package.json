@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production node index.js",
     "lint": "next lint"
 
   },
@@ -31,9 +31,9 @@
     "next-auth": "^4.23.1",
     "next-connect": "^1.0.0",
     "postcss": "^8.4.31",
-    "react": "18.2.0",
+    "react": "17.0.2",
     "react-awesome-slider": "^4.1.0",
-    "react-dom": "18.2.0",
+    "react-dom": "17.0.2",
     "react-firebase-hooks": "^5.1.1",
     "react-hook-form": "^7.46.2",
     "react-scroll": "^1.9.0",

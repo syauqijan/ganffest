@@ -61,7 +61,6 @@ const LoginView = () => {
                 setError('Your email or password is not valid');
             }
         } catch (error: any) {
-            console.log(error);
             setIsLoading(false);
             setError('Your email or password is not valid'); 
         }
