@@ -7,6 +7,7 @@ import { FormControl, Input, InputAdornment, InputLabel, TextField } from '@mui/
 import { VisibilityOff } from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';
 import { Visibility } from '@mui/icons-material';
+import Image from 'next/image';
 
 const LoginView = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -118,7 +119,7 @@ const LoginView = () => {
                 </div>
 
             <button className={styles.google} onClick={handleGoogleSignIn}>
-                <img src="/google.png" alt="google" className={styles.googleIcon} />
+                <Image src="/google.png" alt="google" className={styles.googleIcon} />
                 <p className={styles.googleText}>Sign in with google</p>
                 </button>
             </main>

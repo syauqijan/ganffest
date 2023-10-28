@@ -3,6 +3,7 @@ import styles from './gallery.module.css';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import Image from 'next/image';
 const Gallery: React.FC<{ images: string[] }> = ({ images }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const imagesPerSlide = 3;
@@ -25,7 +26,7 @@ const Gallery: React.FC<{ images: string[] }> = ({ images }) => {
       <div className={styles.galleryContainer} style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
         {images.map((image, index) => (
           <div key={index} className={styles.gallerySlide}>
-            <img src={image} alt={`Slide ${index + 1}`} className={styles.galleryImg} />
+            <Image src={image} alt={`Slide ${index + 1}`} className={styles.galleryImg} />
           </div>
         ))}
       </div>

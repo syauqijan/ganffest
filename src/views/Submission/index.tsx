@@ -11,6 +11,7 @@ import { useSession } from 'next-auth/react';
 import Agreement from '@/components/fragments/submission/agreement'
 import { set } from 'firebase/database'
 import PopUp from '@/components/fragments/popup'
+import Image from 'next/image'
 
 
 type FormDataType = {
@@ -151,7 +152,7 @@ type FormDataType = {
         <div className={styles.header}>
           <div className={styles.title}>
             <div className={styles.titleIcon}>
-            <img src="/dataicon.svg" alt="logo" className={styles.logo} />
+            <Image src="/dataicon.svg" alt="logo" className={styles.logo} />
             </div>
             <div className={styles.titleText}>
             {currentStepIndex === 0 && <h1>Film Data</h1>}

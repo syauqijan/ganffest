@@ -36,9 +36,9 @@ const AboutView = () => {
        
         <div className={styles.textflux} >
           <h1 > Ganesha Film Festival 2024</h1>
-          <p >Ganesha Film Festival tahun ini mengusung tema "Flux" sebagai wujud eksplorasi diri dalam situasi yang dipengaruhi oleh teknologi. "Flux" adalah istilah yang merujuk pada aliran atau pergerakan sesuatu melalui suatu permukaan, seperti hubungan antara manusia dan teknologi yang terus berkembang dan semakin erat seiring berjalannya waktu. Konsep "Flux" mengajak kita untuk terus bergerak, mengejar, dan menemukan kemanusiaan di tengah perubahan konstan yang kita alami dalam masyarakat saat ini
+          <p >Ganesha Film Festival tahun ini mengusung tema Flux sebagai wujud eksplorasi diri dalam situasi yang dipengaruhi oleh teknologi. Flux adalah istilah yang merujuk pada aliran atau pergerakan sesuatu melalui suatu permukaan, seperti hubungan antara manusia dan teknologi yang terus berkembang dan semakin erat seiring berjalannya waktu. Konsep Flux mengajak kita untuk terus bergerak, mengejar, dan menemukan kemanusiaan di tengah perubahan konstan yang kita alami dalam masyarakat saat ini
 
-Seiring dengan perkembangan teknologi yang semakin pesat, kita berada dalam suatu zaman di mana perubahan adalah konstan. Melalui “Flux”, kita dapat merayakan keajaiban teknologi melalui medium film sebagai platform untuk menggali evolusi seni visual serta naratif dalam era digital yang terus berkembang.</p>
+Seiring dengan perkembangan teknologi yang semakin pesat, kita berada dalam suatu zaman di mana perubahan adalah konstan. Melalui Flux, kita dapat merayakan keajaiban teknologi melalui medium film sebagai platform untuk menggali evolusi seni visual serta naratif dalam era digital yang terus berkembang.</p>
         </div> 
         <div className={styles.logoflux}>
             <Image src='/flux.svg' alt='logo-flux' width={300} height={300} />

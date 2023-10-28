@@ -13,7 +13,7 @@ const Timeline = () => {
   const maxLineHeight = 1250;
   useEffect(() => {
     AOS.init({
-      duration: 600, 
+      duration: 900, 
       offset: 200, 
       easing: 'ease-in-out', 
     });
@@ -63,7 +63,7 @@ const Timeline = () => {
           </div>
         </div>
 
-        <div data-aos="fade-left" className={styles.section}>
+        <div data-aos="fade-left" className={styles.sectionRight}>
           <div className={styles.bead}></div>
           <div className={styles.content}>
             <h2 className={styles.eventTitle}>Roadshow Komunitas</h2>
@@ -83,7 +83,7 @@ const Timeline = () => {
           </div>
         </div>
 
-        <div data-aos="fade-left" className={styles.section}>
+        <div data-aos="fade-left" className={styles.sectionRight}>
           <div className={styles.bead}></div>
           <div className={styles.content}>
             <h2 className={styles.eventTitle}>Sinema Keliling</h2>

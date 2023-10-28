@@ -30,7 +30,7 @@ const Navbar = () => {
             
         <div className={styles.navbarContainer}>
         <div className={styles.logo}>
-          <img src="/logonavbar.svg" alt="Logo" className={styles.logo} />
+          <Image src="/logonavbar.svg" alt="Logo" className={styles.logo} />
           
         </div>
         <div className={styles.contentNavbar}>

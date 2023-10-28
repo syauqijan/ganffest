@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Highlight.module.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+import Image from 'next/image';
 
 const Highlight = () => {
   return (
@@ -9,7 +10,7 @@ const Highlight = () => {
       <h1 className={styles.highlightHeader}>The Highlight of Ganesha Film Festival</h1>
       <div className={styles.highlightEvent} data-aos="zoom-in-right">
         <div className={styles.highlightImageContainer}>
-        <img
+        <Image
           src="/roadshow.jpg"
           alt="Event 1"
           className={styles.highlightImage}
@@ -26,7 +27,7 @@ const Highlight = () => {
 
       <div className={styles.highlightEvent} data-aos="zoom-in-left">
         <div className={styles.highlightImageContainer}>
-        <img
+        <Image
           src="/g6.jpg"
           alt="Event 2"
           className={styles.highlightImage}
@@ -42,7 +43,7 @@ const Highlight = () => {
 
       <div className={styles.highlightEvent} data-aos="zoom-in-right">
         <div className={styles.highlightImageContainer}>
-        <img
+        <Image
           src="/g2.jpg"
           alt="Event 3"
           className={styles.highlightImage}
