@@ -1,7 +1,7 @@
 // runtime can't be in strict mode because a global variable is assign and maybe created.
 (self["webpackChunk_N_E"] = self["webpackChunk_N_E"] || []).push([[727],{
 
-/***/ 908:
+/***/ 6:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -10,7 +10,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ next_middleware_loaderabsolutePagePath_private_next_root_dir_2Fsrc_2Fmiddleware_ts_page_2Fsrc_2Fmiddleware_rootDir_2FUsers_2Fsyauqijannatan_2FDocuments_2FGitHub_2Fganffest_matchers_preferredRegion_middlewareConfig_e30_3D_)
+  "default": () => (/* binding */ nHandler)
 });
 
 // NAMESPACE OBJECT: ./src/middleware.ts
@@ -726,7 +726,7 @@ class NextURL {
 } //# sourceMappingURL=next-url.js.map
 
 // EXTERNAL MODULE: ./node_modules/next/dist/compiled/@edge-runtime/cookies/index.js
-var _edge_runtime_cookies = __webpack_require__(44);
+var _edge_runtime_cookies = __webpack_require__(668);
 ;// CONCATENATED MODULE: ./node_modules/next/dist/esm/server/web/spec-extension/cookies.js
  //# sourceMappingURL=cookies.js.map
 
@@ -1533,7 +1533,7 @@ function clearPreviewData(res, options = {}) {
     if (SYMBOL_CLEARED_COOKIES in res) {
         return res;
     }
-    const { serialize } = __webpack_require__(137);
+    const { serialize } = __webpack_require__(565);
     const previous = res.getHeader("Set-Cookie");
     res.setHeader(`Set-Cookie`, [
         ...typeof previous === "string" ? [
@@ -2033,7 +2033,7 @@ async function adapter(params) {
  //# sourceMappingURL=next-response.js.map
 
 // EXTERNAL MODULE: ./node_modules/next-auth/jwt/index.js
-var jwt = __webpack_require__(360);
+var jwt = __webpack_require__(491);
 ;// CONCATENATED MODULE: ./src/middlewares/withAuth.ts
 
 
@@ -2072,41 +2072,42 @@ function mainMiddleware(req) {
 
 ;// CONCATENATED MODULE: ./node_modules/next/dist/build/webpack/loaders/next-middleware-loader.js?absolutePagePath=private-next-root-dir%2Fsrc%2Fmiddleware.ts&page=%2Fsrc%2Fmiddleware&rootDir=%2FUsers%2Fsyauqijannatan%2FDocuments%2FGitHub%2Fganffest&matchers=&preferredRegion=&middlewareConfig=e30%3D!
 
-        
-        
-        
 
-        const mod = { ...middleware_namespaceObject }
-        const handler = mod.middleware || mod.default
+// Import the userland code.
 
-        if (typeof handler !== 'function') {
-          throw new Error('The Middleware "pages/src/middleware" must export a `middleware` or a `default` function');
-        }
+const mod = {
+    ...middleware_namespaceObject
+};
+const handler = mod.middleware || mod.default;
+const page = "/src/middleware";
+if (typeof handler !== "function") {
+    throw new Error(`The Middleware "${page}" must export a \`middleware\` or a \`default\` function`);
+}
+function nHandler(opts) {
+    return adapter({
+        ...opts,
+        page,
+        handler
+    });
+}
 
-        /* harmony default export */ function next_middleware_loaderabsolutePagePath_private_next_root_dir_2Fsrc_2Fmiddleware_ts_page_2Fsrc_2Fmiddleware_rootDir_2FUsers_2Fsyauqijannatan_2FDocuments_2FGitHub_2Fganffest_matchers_preferredRegion_middlewareConfig_e30_3D_(opts) {
-          return adapter({
-            ...opts,
-            page: "/src/middleware",
-            handler,
-          })
-        }
-    
+//# sourceMappingURL=middleware.js.map
 
 /***/ }),
 
-/***/ 587:
+/***/ 741:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
-var _interopRequireDefault = __webpack_require__(757);
+var _interopRequireDefault = __webpack_require__(562);
 Object.defineProperty(exports, "__esModule", ({
     value: true
 }));
 exports.SessionStore = void 0;
 exports.defaultCookies = defaultCookies;
-var _classPrivateFieldGet3 = _interopRequireDefault(__webpack_require__(547));
-var _classPrivateFieldSet2 = _interopRequireDefault(__webpack_require__(92));
+var _classPrivateFieldGet3 = _interopRequireDefault(__webpack_require__(985));
+var _classPrivateFieldSet2 = _interopRequireDefault(__webpack_require__(441));
 function _classPrivateMethodInitSpec(obj, privateSet) {
     _checkPrivateRedeclaration(obj, privateSet);
     privateSet.add(obj);
@@ -2233,8 +2234,9 @@ class SessionStore {
     }
     get value() {
         const sortedKeys = Object.keys((0, _classPrivateFieldGet3.default)(this, _chunks)).sort((a, b)=>{
-            const aSuffix = parseInt(a.split(".").pop() || "0");
-            const bSuffix = parseInt(b.split(".").pop() || "0");
+            var _a$split$pop, _b$split$pop;
+            const aSuffix = parseInt((_a$split$pop = a.split(".").pop()) !== null && _a$split$pop !== void 0 ? _a$split$pop : "0");
+            const bSuffix = parseInt((_b$split$pop = b.split(".").pop()) !== null && _b$split$pop !== void 0 ? _b$split$pop : "0");
             return aSuffix - bSuffix;
         });
         return sortedKeys.map((key)=>(0, _classPrivateFieldGet3.default)(this, _chunks)[key]).join("");
@@ -2306,12 +2308,12 @@ function _clean2() {
 
 /***/ }),
 
-/***/ 360:
+/***/ 491:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
-var _interopRequireDefault = __webpack_require__(757);
+var _interopRequireDefault = __webpack_require__(562);
 Object.defineProperty(exports, "__esModule", ({
     value: true
 }));
@@ -2323,11 +2325,11 @@ var _exportNames = {
 exports.decode = decode;
 exports.encode = encode;
 exports.getToken = getToken;
-var _jose = __webpack_require__(244);
-var _hkdf = _interopRequireDefault(__webpack_require__(799));
-var _uuid = __webpack_require__(794);
-var _cookie = __webpack_require__(587);
-var _types = __webpack_require__(921);
+var _jose = __webpack_require__(357);
+var _hkdf = _interopRequireDefault(__webpack_require__(506));
+var _uuid = __webpack_require__(830);
+var _cookie = __webpack_require__(741);
+var _types = __webpack_require__(452);
 Object.keys(_types).forEach(function(key) {
     if (key === "default" || key === "__esModule") return;
     if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
@@ -2395,7 +2397,7 @@ async function getDerivedEncryptionKey(secret) {
 
 /***/ }),
 
-/***/ 921:
+/***/ 452:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -2407,7 +2409,7 @@ Object.defineProperty(exports, "__esModule", ({
 
 /***/ }),
 
-/***/ 44:
+/***/ 668:
 /***/ ((module) => {
 
 "use strict";
@@ -2441,7 +2443,6 @@ __export(src_exports, {
     ResponseCookies: ()=>ResponseCookies,
     parseCookie: ()=>parseCookie,
     parseSetCookie: ()=>parseSetCookie,
-    splitCookiesString: ()=>splitCookiesString,
     stringifyCookie: ()=>stringifyCookie
 });
 module.exports = __toCommonJS(src_exports);
@@ -2455,7 +2456,8 @@ function stringifyCookie(c) {
         "domain" in c && c.domain && `Domain=${c.domain}`,
         "secure" in c && c.secure && "Secure",
         "httpOnly" in c && c.httpOnly && "HttpOnly",
-        "sameSite" in c && c.sameSite && `SameSite=${c.sameSite}`
+        "sameSite" in c && c.sameSite && `SameSite=${c.sameSite}`,
+        "priority" in c && c.priority && `Priority=${c.priority}`
     ].filter(Boolean);
     return `${c.name}=${encodeURIComponent((_a = c.value) != null ? _a : "")}; ${attrs.join("; ")}`;
 }
@@ -2483,7 +2485,7 @@ function parseSetCookie(setCookie) {
         return void 0;
     }
     const [[name, value], ...attributes] = parseCookie(setCookie);
-    const { domain, expires, httponly, maxage, path, samesite, secure } = Object.fromEntries(attributes.map(([key, value2])=>[
+    const { domain, expires, httponly, maxage, path, samesite, secure, priority } = Object.fromEntries(attributes.map(([key, value2])=>[
             key.toLowerCase(),
             value2
         ]));
@@ -2506,6 +2508,9 @@ function parseSetCookie(setCookie) {
         },
         ...secure && {
             secure: true
+        },
+        ...priority && {
+            priority: parsePriority(priority)
         }
     };
     return compact(cookie);
@@ -2527,6 +2532,15 @@ var SAME_SITE = [
 function parseSameSite(string) {
     string = string.toLowerCase();
     return SAME_SITE.includes(string) ? string : void 0;
+}
+var PRIORITY = [
+    "low",
+    "medium",
+    "high"
+];
+function parsePriority(string) {
+    string = string.toLowerCase();
+    return PRIORITY.includes(string) ? string : void 0;
 }
 function splitCookiesString(cookiesString) {
     if (!cookiesString) return [];
@@ -2660,13 +2674,10 @@ var RequestCookies = class {
 var ResponseCookies = class {
     constructor(responseHeaders){
         /** @internal */ this._parsed = /* @__PURE__ */ new Map();
-        var _a, _b;
+        var _a, _b, _c;
         this._headers = responseHeaders;
-        const setCookie = (_a = responseHeaders.getSetCookie) == null ? void 0 : _a.call(responseHeaders);
-        (_b = responseHeaders.get("set-cookie")) != null ? _b : [];
-        const cookieStrings = Array.isArray(setCookie) ? setCookie : // TODO: remove splitCookiesString when `getSetCookie` adoption is high enough in Node.js
-        // https://developer.mozilla.org/en-US/docs/Web/API/Headers/getSetCookie#browser_compatibility
-        splitCookiesString(setCookie);
+        const setCookie = (_c = (_b = (_a = responseHeaders.getSetCookie) == null ? void 0 : _a.call(responseHeaders)) != null ? _b : responseHeaders.get("set-cookie")) != null ? _c : [];
+        const cookieStrings = Array.isArray(setCookie) ? setCookie : splitCookiesString(setCookie);
         for (const cookieString of cookieStrings){
             const parsed = parseSetCookie(cookieString);
             if (parsed) this._parsed.set(parsed.name, parsed);
@@ -2764,7 +2775,7 @@ function normalizeCookie(cookie = {
 
 /***/ }),
 
-/***/ 137:
+/***/ 565:
 /***/ ((module) => {
 
 "use strict";
@@ -2892,7 +2903,7 @@ var __dirname = "/";
 
 /***/ }),
 
-/***/ 794:
+/***/ 830:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3471,7 +3482,7 @@ function version(uuid) {
 
 /***/ }),
 
-/***/ 497:
+/***/ 488:
 /***/ ((module) => {
 
 "use strict";
@@ -3487,7 +3498,7 @@ module.exports = _classApplyDescriptorGet, module.exports.__esModule = true, mod
 
 /***/ }),
 
-/***/ 455:
+/***/ 311:
 /***/ ((module) => {
 
 "use strict";
@@ -3507,7 +3518,7 @@ module.exports = _classApplyDescriptorSet, module.exports.__esModule = true, mod
 
 /***/ }),
 
-/***/ 469:
+/***/ 29:
 /***/ ((module) => {
 
 "use strict";
@@ -3523,13 +3534,13 @@ module.exports = _classExtractFieldDescriptor, module.exports.__esModule = true,
 
 /***/ }),
 
-/***/ 547:
+/***/ 985:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
-var classApplyDescriptorGet = __webpack_require__(497);
-var classExtractFieldDescriptor = __webpack_require__(469);
+var classApplyDescriptorGet = __webpack_require__(488);
+var classExtractFieldDescriptor = __webpack_require__(29);
 function _classPrivateFieldGet(receiver, privateMap) {
     var descriptor = classExtractFieldDescriptor(receiver, privateMap, "get");
     return classApplyDescriptorGet(receiver, descriptor);
@@ -3539,13 +3550,13 @@ module.exports = _classPrivateFieldGet, module.exports.__esModule = true, module
 
 /***/ }),
 
-/***/ 92:
+/***/ 441:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
-var classApplyDescriptorSet = __webpack_require__(455);
-var classExtractFieldDescriptor = __webpack_require__(469);
+var classApplyDescriptorSet = __webpack_require__(311);
+var classExtractFieldDescriptor = __webpack_require__(29);
 function _classPrivateFieldSet(receiver, privateMap, value) {
     var descriptor = classExtractFieldDescriptor(receiver, privateMap, "set");
     classApplyDescriptorSet(receiver, descriptor, value);
@@ -3556,7 +3567,7 @@ module.exports = _classPrivateFieldSet, module.exports.__esModule = true, module
 
 /***/ }),
 
-/***/ 757:
+/***/ 562:
 /***/ ((module) => {
 
 "use strict";
@@ -3571,7 +3582,7 @@ module.exports = _interopRequireDefault, module.exports.__esModule = true, modul
 
 /***/ }),
 
-/***/ 799:
+/***/ 506:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3651,7 +3662,7 @@ async function web_hkdf(digest, ikm, salt, info, keylen) {
 
 /***/ }),
 
-/***/ 244:
+/***/ 357:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3677,6 +3688,7 @@ __webpack_require__.d(__webpack_exports__, {
   compactVerify: () => (/* reexport */ compactVerify),
   createLocalJWKSet: () => (/* reexport */ createLocalJWKSet),
   createRemoteJWKSet: () => (/* reexport */ createRemoteJWKSet),
+  cryptoRuntime: () => (/* reexport */ util_runtime),
   decodeJwt: () => (/* reexport */ decodeJwt),
   decodeProtectedHeader: () => (/* reexport */ decodeProtectedHeader),
   errors: () => (/* reexport */ errors_namespaceObject),
@@ -7751,7 +7763,15 @@ async function generate_secret_generateSecret(alg, options) {
     return generateSecret(alg, options);
 }
 
+;// CONCATENATED MODULE: ./node_modules/jose/dist/browser/runtime/runtime.js
+/* harmony default export */ const runtime = ("WebCryptoAPI");
+
+;// CONCATENATED MODULE: ./node_modules/jose/dist/browser/util/runtime.js
+
+/* harmony default export */ const util_runtime = (runtime);
+
 ;// CONCATENATED MODULE: ./node_modules/jose/dist/browser/index.js
+
 
 
 
@@ -7790,7 +7810,7 @@ async function generate_secret_generateSecret(alg, options) {
 },
 /******/ __webpack_require__ => { // webpackRuntimeModules
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ var __webpack_exports__ = (__webpack_exec__(908));
+/******/ var __webpack_exports__ = (__webpack_exec__(6));
 /******/ (_ENTRIES = typeof _ENTRIES === "undefined" ? {} : _ENTRIES)["middleware_src/middleware"] = __webpack_exports__;
 /******/ }
 ]);
