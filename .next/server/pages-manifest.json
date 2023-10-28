@@ -7,8 +7,8 @@
   "/api/submission": "pages/api/submission.js",
   "/auth/login": "pages/auth/login.html",
   "/auth/register": "pages/auth/register.html",
-  "/profile": "pages/profile.html",
   "/": "pages/index.html",
+  "/profile": "pages/profile.html",
   "/submission": "pages/submission.html",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js"
