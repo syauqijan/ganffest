@@ -119,7 +119,7 @@ const LoginView = () => {
                 </div>
 
             <button className={styles.google} onClick={handleGoogleSignIn}>
-                <Image src="/google.png" alt="google" className={styles.googleIcon} />
+                <Image src="/google.png" alt="google" className={styles.googleIcon} width={30} height={30}/>
                 <p className={styles.googleText}>Sign in with google</p>
                 </button>
             </main>

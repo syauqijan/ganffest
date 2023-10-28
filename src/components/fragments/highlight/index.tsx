@@ -14,6 +14,8 @@ const Highlight = () => {
           src="/roadshow.jpg"
           alt="Event 1"
           className={styles.highlightImage}
+          width={500}
+          height={500}
         />
         </div>
         <div className={styles.highlightInfo}>
@@ -31,6 +33,8 @@ const Highlight = () => {
           src="/g6.jpg"
           alt="Event 2"
           className={styles.highlightImage}
+          width={400}
+          height={400}
         />
         </div>
         <div className={styles.highlightInfo}>
@@ -47,6 +51,8 @@ const Highlight = () => {
           src="/g2.jpg"
           alt="Event 3"
           className={styles.highlightImage}
+          width={400}
+          height={400}
         />
         </div>
         <div className={styles.highlightInfo}>

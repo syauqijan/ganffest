@@ -152,7 +152,7 @@ type FormDataType = {
         <div className={styles.header}>
           <div className={styles.title}>
             <div className={styles.titleIcon}>
-            <Image src="/dataicon.svg" alt="logo" className={styles.logo} />
+            <Image src="/dataicon.svg" alt="logo" className={styles.logo} width={30} height={30}/>
             </div>
             <div className={styles.titleText}>
             {currentStepIndex === 0 && <h1>Film Data</h1>}
