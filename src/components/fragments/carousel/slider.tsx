@@ -30,7 +30,7 @@ const Slider = () => {
             Watch on YouTube
           </a>
         </div>
-        <div data-src='/c5.jpg'>
+        <div data-src='/g3.jpg'>
           <a
             href="https://www.youtube.com/watch?v=qBnkCCJuz_E"
             target="_blank"

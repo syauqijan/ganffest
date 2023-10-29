@@ -1,5 +1,4 @@
 import { signIn, signInWithGoogle } from "@/utils/db/service";
-import { compare } from "bcrypt";
 import { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
 import  CredentialsProvider  from "next-auth/providers/credentials";
@@ -28,7 +27,7 @@ const authOptions: NextAuthOptions = {
                 }
                 const user : any = await signIn({email});
                 if(user){
-                    const passwordConfirm = await compare(password, user.userPassword);
+
                     if(password===user.userPassword){
                         return user;
                     }
@@ -71,7 +70,7 @@ const authOptions: NextAuthOptions = {
                         token.type = result.data.type;
                     }
                     else{
-                    
+                        console.log(result.message);
                     }
                 });
     
