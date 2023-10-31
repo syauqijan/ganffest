@@ -114,7 +114,7 @@ type FormDataType = {
     };
     console.log(dataWithUserEmail)
     try{
-      await axios.post('http://localhost:3000/submissions', {
+      await axios.post('http://localhost:3001/submissions', {
         email_submitter: session?.user?.email || '',
         judul_film: dataWithUserEmail.judul_film,
         bahasa: dataWithUserEmail.bahasa,
