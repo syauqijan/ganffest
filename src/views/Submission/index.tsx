@@ -114,8 +114,7 @@ type FormDataType = {
     };
     console.log(dataWithUserEmail)
     try{
-      await axios.post('http://localhost:3001/submissions', {
-        email_submitter: session?.user?.email || '',
+      await axios.post('https://api.ganeshafilmfestival.com/submissions', {
         judul_film: dataWithUserEmail.judul_film,
         bahasa: dataWithUserEmail.bahasa,
         tahun: dataWithUserEmail.tahun,
@@ -127,12 +126,12 @@ type FormDataType = {
         link_cover: dataWithUserEmail.link_cover,
         sinopsis: dataWithUserEmail.sinopsis,
         suara: dataWithUserEmail.suara,
-        nama: dataWithUserEmail.nama,
+        nama_sutradara: dataWithUserEmail.nama,
         no_hp: dataWithUserEmail.no_hp,
         alamat: dataWithUserEmail.alamat,
         email: dataWithUserEmail.email,
         kota_sutradara: dataWithUserEmail.kota_sutradara,
-        foto: dataWithUserEmail.foto,
+        foto_sutradara: dataWithUserEmail.foto,
         provinsi: dataWithUserEmail.provinsi,
         biografi: dataWithUserEmail.biografi,
         gender: dataWithUserEmail.gender,
