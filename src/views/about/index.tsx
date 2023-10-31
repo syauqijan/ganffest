@@ -22,7 +22,7 @@ const AboutView = () => {
       </div> */}
       <div className={styles.lfm}>
       <div className={styles.logoflux}>
-            <Image src='/logolfmputih.png' alt='logo-lfm' width={200} height={200} />
+            <Image src='/logolfmputih.png' alt='logo-lfm' width={350} height={200} />
         </div>
         <div className={styles.textlfm}>
           <h1 > Liga Film Mahasiswa</h1>
@@ -41,7 +41,7 @@ const AboutView = () => {
 Seiring dengan perkembangan teknologi yang semakin pesat, kita berada dalam suatu zaman di mana perubahan adalah konstan. Melalui Flux, kita dapat merayakan keajaiban teknologi melalui medium film sebagai platform untuk menggali evolusi seni visual serta naratif dalam era digital yang terus berkembang.</p>
         </div> 
         <div className={styles.logoflux}>
-            <Image src='/flux.svg' alt='logo-flux' width={200} height={200} />
+            <Image src='/flux.svg' alt='logo-flux' width={300} height={200} />
         </div>
       </div>
     </div>
