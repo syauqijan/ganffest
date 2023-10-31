@@ -12,7 +12,7 @@ import Agreement from '@/components/fragments/submission/agreement'
 import { set } from 'firebase/database'
 import PopUp from '@/components/fragments/popup'
 import Image from 'next/image'
-
+import axios from 'axios'
 
 type FormDataType = {
     judul_film: string;
@@ -107,27 +107,66 @@ type FormDataType = {
 
     setIsLoading(true);
     setShowPopup(false);
+    // console.log(data);
     const dataWithUserEmail = {
       ...data,
-      emailSubmitter: session?.user?.email || '',
+      email_submitter: session?.user?.email || '',
     };
-  
-    const result = await fetch('../api/submission', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(dataWithUserEmail),
-    });
-  
-    if (result.status === 200) {
+    console.log(dataWithUserEmail)
+    try{
+      await axios.post('http://localhost:3000/submissions', {
+        email_submitter: session?.user?.email || '',
+        judul_film: dataWithUserEmail.judul_film,
+        bahasa: dataWithUserEmail.bahasa,
+        tahun: dataWithUserEmail.tahun,
+        festival: dataWithUserEmail.festival,
+        kota: dataWithUserEmail.kota,
+        penghargaan: dataWithUserEmail.penghargaan,
+        durasi: dataWithUserEmail.durasi,
+        link_film: dataWithUserEmail.link_film,
+        link_cover: dataWithUserEmail.link_cover,
+        sinopsis: dataWithUserEmail.sinopsis,
+        suara: dataWithUserEmail.suara,
+        nama: dataWithUserEmail.nama,
+        no_hp: dataWithUserEmail.no_hp,
+        alamat: dataWithUserEmail.alamat,
+        email: dataWithUserEmail.email,
+        kota_sutradara: dataWithUserEmail.kota_sutradara,
+        foto: dataWithUserEmail.foto,
+        provinsi: dataWithUserEmail.provinsi,
+        biografi: dataWithUserEmail.biografi,
+        gender: dataWithUserEmail.gender,
+        nama_produksi: dataWithUserEmail.nama_produksi,
+        alamat_produksi: dataWithUserEmail.alamat_produksi,
+        no_hp_produksi: dataWithUserEmail.no_hp_produksi,
+        provinsi_produksi: dataWithUserEmail.provinsi_produksi,
+        nama_produser: dataWithUserEmail.nama_produser,
+        no_hp_produser: dataWithUserEmail.no_hp_produser,
+      });
+      setIsLoading(false);
       setFinishTitle("Submission success");
       setFinishMessage(dataWithUserEmail.judul_film + " has been submitted!")
       setShowFinishPopup(true);
-    } else {
+    }catch(error){
       setIsLoading(false);
-      setError(result.status === 400 ? "Email already exists" : "");
+      console.log(error);
     }
+    // const result = await fetch('../api/submission', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(dataWithUserEmail),
+    // });
+  
+    // if (result.status === 200) {
+    //   setFinishTitle("Submission success");
+    //   setFinishMessage(dataWithUserEmail.judul_film + " has been submitted!")
+    //   setShowFinishPopup(true);
+    // } else {
+    //   setIsLoading(false);
+    //   setError(result.status === 400 ? "Email already exists" : "");
+    // }
   };
   
 

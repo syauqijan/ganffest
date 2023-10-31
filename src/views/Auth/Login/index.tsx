@@ -8,6 +8,8 @@ import { VisibilityOff } from '@mui/icons-material';
 import IconButton from '@mui/material/IconButton';
 import { Visibility } from '@mui/icons-material';
 import Image from 'next/image';
+import axios from 'axios';
+
 
 const LoginView = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -15,7 +17,8 @@ const LoginView = () => {
     const [error, setError] = useState('');
     const callbackUrl : any = query.callbackUrl || "/";
     const [showPassword, setShowPassword] = React.useState(false);
-
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
     const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -35,35 +38,51 @@ const LoginView = () => {
         event.preventDefault();
         setError(''); 
 
-        const email = event.target.email.value;
-        const password = event.target.userPassword.value;
+        // if (!email || !password) {
+        //     setError('Please fill all this field');
+        //     return; 
+        // }
 
-        if (!email || !password) {
-            setError('Please fill all this field');
-            return; 
-        }
+        // setIsLoading(true);
 
-        setIsLoading(true);
+        // try{
+        //     await axios.post('http://localhost:3000/users/login', {
+        //         email: email,
+        //         password: password,
+        //     });
+        //     setIsLoading(false);
+        //     push('/');
+        // }
 
-        try {
-            const res = await signIn('credentials', {
-                redirect: false,
-                email: email,
-                password: password
-            });
+        // const email = event.target.email.value;
+        // const password = event.target.userPassword.value;
 
-            if (!res?.error) {
-                event.target.reset();
-                setIsLoading(false);
-                push('/');
-            } else {
-                setIsLoading(false);
-                setError('Your email or password is not valid');
-            }
-        } catch (error: any) {
-            setIsLoading(false);
-            setError('Your email or password is not valid'); 
-        }
+        // if (!email || !password) {
+        //     setError('Please fill all this field');
+        //     return; 
+        // }
+
+        // setIsLoading(true);
+
+        // try {
+        //     const res = await signIn('credentials', {
+        //         redirect: false,
+        //         email: email,
+        //         password: password
+        //     });
+
+        //     if (!res?.error) {
+        //         event.target.reset();
+        //         setIsLoading(false);
+        //         push('/');
+        //     } else {
+        //         setIsLoading(false);
+        //         setError('Your email or password is not valid');
+        //     }
+        // } catch (error: any) {
+        //     setIsLoading(false);
+        //     setError('Your email or password is not valid'); 
+        // }
     }
     return (
         <div id="tsparticles">
@@ -76,7 +95,7 @@ const LoginView = () => {
             {error && <p className={styles.error}>{error}</p>}
             <form className={styles.loginForm} onSubmit={handleSubmit} method="POST">
                 <div className={styles.inputBox}>
-                    <TextField sx={{ width: '26ch', marginBottom:'15px' }} id="email" label="Email" placeholder="Type your email" variant="standard" />
+                    <TextField sx={{ width: '26ch', marginBottom:'15px' }} id="email" label="Email" placeholder="Type your email" variant="standard" value={email} onChange={(e) => setEmail(e.target.value)}/>
                 </div>
                 
                 <div className={styles.inputBox}>
@@ -87,6 +106,8 @@ const LoginView = () => {
                         type={showPassword ? 'text' : 'password'}
                         placeholder='Type your password'
                         name="userPassword"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         endAdornment={
                         <InputAdornment position="end">
                             <IconButton
