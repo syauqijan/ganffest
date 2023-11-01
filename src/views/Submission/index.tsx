@@ -112,7 +112,7 @@ type FormDataType = {
       ...data,
       email_submitter: session?.user?.email || '',
     };
-    console.log(dataWithUserEmail)
+    // console.log(dataWithUserEmail)
     try{
       await axios.post('https://api.ganeshafilmfestival.com/submissions', {
         judul_film: dataWithUserEmail.judul_film,
@@ -148,7 +148,7 @@ type FormDataType = {
       setShowFinishPopup(true);
     }catch(error){
       setIsLoading(false);
-      console.log(error);
+      // console.log(error);
     }
     // const result = await fetch('../api/submission', {
     //   method: 'POST',
