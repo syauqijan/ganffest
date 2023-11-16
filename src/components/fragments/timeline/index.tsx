@@ -106,7 +106,7 @@ const Timeline = () => {
           </div>
         </div>
 
-        <div data-aos="fade-right" className={styles.section}>
+        {/* <div data-aos="fade-right" className={styles.section}>
           <div className={styles.bead}></div>
           <div className={styles.content}>
             <h2 className={styles.eventTitle}>Malam Komunitas</h2>
@@ -114,9 +114,9 @@ const Timeline = () => {
               Desember 2023
             </p>
           </div>
-        </div>
+        </div> */}
 
-        <div data-aos="fade-left" className={styles.sectionRight} id="mySection2">
+        <div data-aos="fade-right" className={styles.section} id="mySection">
           <div className={styles.bead}></div>
           <div className={styles.content}>
             <h2 className={styles.eventTitle}>Sinema Keliling</h2>
@@ -126,7 +126,7 @@ const Timeline = () => {
           </div>
         </div>
 
-        <div data-aos="fade-right" className={styles.section}>
+        <div data-aos="fade-left" className={styles.sectionRight}>
           <div className={styles.bead}></div>
           <div className={styles.content}>
             <h2 className={styles.eventTitle}>Main Event</h2>
