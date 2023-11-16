@@ -10,7 +10,7 @@ import 'aos/dist/aos.css';
 
 const Timeline = () => {
   const lineRef = useRef<HTMLDivElement | null>(null); 
-  const maxLineHeight = 1250;
+  const maxLineHeight = 1000;
   useEffect(() => {
     AOS.init({
       duration: 900, 
