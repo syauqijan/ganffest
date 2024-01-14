@@ -13,6 +13,7 @@ import { set } from 'firebase/database'
 import PopUp from '@/components/fragments/popup'
 import Image from 'next/image'
 import axios from 'axios'
+import CountdownTimer from '@/components/fragments/countdown'
 
 type FormDataType = {
     judul_film: string;
@@ -176,12 +177,23 @@ type FormDataType = {
   const [FinishTitle, setFinishTitle] = useState("");
   
   return (
+    
+      
+   
     <Fragment>
      <div className={styles.container}> 
      <title>
         Film Submission
       </title>
-      <form onSubmit={onSubmit} className={styles.myForm} method='POST'>
+      <div className={styles.headerForm} >
+      <h1> Calling Entry Ganesha Film Festival 2024 Resmi Ditutup!</h1>
+      </div>
+      <div className={styles.description}>
+        <p>Terima kasih atas antusiasme dan partisipasi para Sineas dalam mengikuti submisi Ganesha Film Festival 2024. Tunggu info selanjutnya di media sosial kami!</p>
+        {/* <p></p> */}
+      </div>
+      {/* <CountdownTimer/> */}
+      {/* <form onSubmit={onSubmit} className={styles.myForm} method='POST'>
         <div className={styles.headerForm}>
         <h1>FORM SUBMISSION</h1>
         </div> 
@@ -212,12 +224,12 @@ type FormDataType = {
           )}
           <button className={styles.nextbutton} type="submit">{isLastStep ? "Finish" : "Next"}</button>
         </div>
-      </form>
+      </form> */}
     </div>
-    <FilmTerms isVisible={showModal} onClose={() => setShowModal(false)}/>
+    {/* <FilmTerms isVisible={showModal} onClose={() => setShowModal(false)}/> */}
     {/* <Agreement isVisible={showPopup} onClose={() => {setShowPopup(false), submitHandler}}/> */}
-    <Agreement isVisible={showPopup} onClose={() => { setShowPopup(false); submitHandler({}); }} onBack={() => setShowPopup(false)} />
-    <PopUp isVisible={showFinishPopup} onClose={() => { setIsLoading(false);push('/');}} message={FinishMessage} messageTitle={FinishTitle}/>
+    {/* <Agreement isVisible={showPopup} onClose={() => { setShowPopup(false); submitHandler({}); }} onBack={() => setShowPopup(false)} />
+    <PopUp isVisible={showFinishPopup} onClose={() => { setIsLoading(false);push('/');}} message={FinishMessage} messageTitle={FinishTitle}/> */}
 
 
 

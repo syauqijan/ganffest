@@ -9,7 +9,11 @@
     align-items: center;
     justify-content: center;
     display: flex;
+    flex-direction: column;
     padding-bottom: 50px;
+    padding-top: 100px;
+    padding-left: 150px;
+    padding-right: 150px;
   }
   
   .myForm {
@@ -47,10 +51,28 @@
     text-align: center;
     margin-bottom: 1rem;
     justify-content: center;
-    font-size: 44px;
-    background: linear-gradient(to right, #F9F6D5 , #4863D8);
+    font-size: 40px;
+    font-weight: 600;
+    text-decoration: underline;
+    
+    /* background: linear-gradient(to right, #F9F6D5 , #4863D8); */
+    background-color: #F9F6D5;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+  }
+
+  .description{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 20px;
+    align-self: center;
+    text-align: center;
+    padding-left: 140px;
+    padding-right: 140px;
   }
   
   .title {
@@ -58,7 +80,7 @@
     font-size: 24px;
     flex-direction: row;
     display: flex;
-
+    
   }
   .titleText h1 {
     margin-left: 10px;
@@ -149,3 +171,22 @@
   }
 }
   
+@media only screen and (max-width: 700px){
+  .container{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .headerForm{
+    font-size: 28px;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+  }
+  .description{
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+}
