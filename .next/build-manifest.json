@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/AyEvwm6ihyMBKoeamnxkN/_buildManifest.js",
-    "static/AyEvwm6ihyMBKoeamnxkN/_ssgManifest.js"
+    "static/5HbmPTdNvqf34p2QKQrKy/_buildManifest.js",
+    "static/5HbmPTdNvqf34p2QKQrKy/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -30,7 +30,7 @@
       "static/chunks/framework-0c7baedefba6b077.js",
       "static/chunks/main-9c10ff05295a6bc3.js",
       "static/css/d5f5d9c7a184cd53.css",
-      "static/chunks/pages/_app-dcdf57ec7182bdec.js"
+      "static/chunks/pages/_app-7c8b8d1e474638ab.js"
     ],
     "/_error": [
       "static/chunks/webpack-6af0e3c12b874bb0.js",
@@ -60,7 +60,14 @@
       "static/chunks/903-c3baecf77fb52a01.js",
       "static/chunks/154-587757f1387768aa.js",
       "static/css/f64f9249dd466d42.css",
-      "static/chunks/pages/auth/register-0cfaddd1ae93ed1a.js"
+      "static/chunks/pages/auth/register-f136afbe430c8613.js"
+    ],
+    "/merch": [
+      "static/chunks/webpack-6af0e3c12b874bb0.js",
+      "static/chunks/framework-0c7baedefba6b077.js",
+      "static/chunks/main-9c10ff05295a6bc3.js",
+      "static/css/8de4fe53be0bfa8d.css",
+      "static/chunks/pages/merch-27e7496bddcc332f.js"
     ],
     "/profile": [
       "static/chunks/webpack-6af0e3c12b874bb0.js",
@@ -73,8 +80,8 @@
       "static/chunks/framework-0c7baedefba6b077.js",
       "static/chunks/main-9c10ff05295a6bc3.js",
       "static/chunks/154-587757f1387768aa.js",
-      "static/css/44601f4065f5a654.css",
-      "static/chunks/pages/submission-47883df86862129b.js"
+      "static/css/f615413c6843c6a4.css",
+      "static/chunks/pages/submission-6fd19d6258d8fb71.js"
     ]
   },
   "ampFirstPages": []
