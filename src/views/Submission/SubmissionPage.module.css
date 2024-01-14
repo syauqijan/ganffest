@@ -86,14 +86,14 @@
     margin-left: 10px;
   
   }
-  .separator {
+  /* .separator {
     border: none;
     height: 1px;
     background: linear-gradient(to right, #F9F6D5, #4863D8);
     margin-bottom: 20px;
     
 
-  }
+  } */
   .buttonContainer {
     padding: 15px;
     margin-top: 1rem;
