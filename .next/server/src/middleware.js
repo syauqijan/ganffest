@@ -2065,7 +2065,7 @@ function mainMiddleware(req) {
     return NextResponse.redirect(new URL("/auth/login", req.url));
 }
 /* harmony default export */ const middleware = (withAuth(mainMiddleware, [
-    "/submission"
+    ""
 ])); // export const config = {
  //     matcher: ("/profile")
  // }

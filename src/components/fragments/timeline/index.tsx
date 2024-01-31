@@ -10,7 +10,7 @@ import 'aos/dist/aos.css';
 
 const Timeline = () => {
   const lineRef = useRef<HTMLDivElement | null>(null); 
-  const maxLineHeight = 1250;
+  const maxLineHeight = 1000;
   useEffect(() => {
     AOS.init({
       duration: 900, 
@@ -41,6 +41,39 @@ const Timeline = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  useEffect(() => {
+    // Mengambil referensi ke elemen dengan ID "mySection"
+    const section = document.getElementById("mySection");
+    const section2 = document.getElementById("mySection2");
+
+    // Periksa lebar layar saat komponen dimuat
+    const handleResize = () => {
+      if (window.innerWidth <= 768 && section && section2) {
+        section.setAttribute("data-aos", "fade-right");
+        section2.setAttribute("data-aos", "fade-right");
+      } else if (section&&section2) {
+        section.setAttribute("data-aos","fade-left");
+        section2.setAttribute("data-aos","fade-left");
+      }
+    };
+
+    // Panggil fungsi handleResize saat komponen dimuat
+    handleResize();
+  
+    // Tambahkan event listener untuk merespons perubahan lebar layar
+    window.addEventListener("resize", handleResize);
+  
+    // Bersihkan event listener saat komponen dibongkar
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  
+  
+  
+  
+  
+  
   return (
     <div className={styles.container}>
       <div className={styles.topSection}>
@@ -63,22 +96,32 @@ const Timeline = () => {
           </div>
         </div>
 
-        <div data-aos="fade-left" className={styles.sectionRight}>
+        <div data-aos="fade-left" className={styles.sectionRight} id="mySection">
           <div className={styles.bead}></div>
           <div className={styles.content}>
             <h2 className={styles.eventTitle}>Roadshow Komunitas</h2>
             <p>
-              10 November 2023
+              November-Desember 2023
             </p>
           </div>
         </div>
 
-        <div data-aos="fade-right" className={styles.section}>
+        {/* <div data-aos="fade-right" className={styles.section}>
           <div className={styles.bead}></div>
           <div className={styles.content}>
             <h2 className={styles.eventTitle}>Malam Komunitas</h2>
             <p>
-              20 November 2023
+              Desember 2023
+            </p>
+          </div>
+        </div> */}
+
+        <div data-aos="fade-right" className={styles.section} id="mySection">
+          <div className={styles.bead}></div>
+          <div className={styles.content}>
+            <h2 className={styles.eventTitle}>Sinema Keliling</h2>
+            <p>
+              Januari-Februari 2024
             </p>
           </div>
         </div>
@@ -86,19 +129,9 @@ const Timeline = () => {
         <div data-aos="fade-left" className={styles.sectionRight}>
           <div className={styles.bead}></div>
           <div className={styles.content}>
-            <h2 className={styles.eventTitle}>Sinema Keliling</h2>
-            <p>
-              15 Januari 2024
-            </p>
-          </div>
-        </div>
-
-        <div data-aos="fade-right" className={styles.section}>
-          <div className={styles.bead}></div>
-          <div className={styles.content}>
             <h2 className={styles.eventTitle}>Main Event</h2>
             <p className={styles.eventDate}>
-              8 Maret 2024
+              Maret 2024
             </p>
           </div>
         </div>

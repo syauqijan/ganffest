@@ -45,7 +45,7 @@ const Navbar = () => {
           About Us
         </Link>
           {/* <img src='@/usergff.png' alt="Logo Akun" className="w-14 h-14 mx-4" /> */}
-        <div className={styles.authButton}>
+        {/* <div className={styles.authButton}>
           
           {data ? (
             
@@ -72,7 +72,7 @@ const Navbar = () => {
               <p>Sign In</p>
             </button>
           )}
-          </div>
+          </div> */}
 
 
 
@@ -96,13 +96,13 @@ const Navbar = () => {
                   <Link href="/about" className={`${styles.navPageMobile} ${router.pathname === '/about' ? styles.boldLink : ''}`} onClick={handleNavPageMobileClick}>
                     About Us
                   </Link>
-                  {data ? (
+                  {/* {data ? (
                           <button className={styles.buttonSignout} onClick={() => signOut()} >Sign Out</button>
                   ) : (
                     <button className={styles.buttonAuth} onClick={() => signIn()}>
                       <p>Sign In</p>
                     </button>
-                  )}
+                  )} */}
                   </div>
                 </div>
               )}

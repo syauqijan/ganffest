@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../Navbar'
 import { useRouter } from 'next/router';
 import Footer from '../Footer';
+import Head from 'next/head';
 
 type MainLayoutProps = {
     children: React.ReactNode
@@ -15,6 +16,9 @@ const MainLayout = (props: MainLayoutProps) => {
   return (
     
       <div className='container'>
+        <Head>
+          <link rel="icon" href="/gffhead.png" type="image/png"/>
+        </Head>
         <div>
           <main>
             {!disableNavbars.includes(pathname) && <Navbar />}

@@ -156,7 +156,7 @@ export function FilmDataForm({
         </div>
         <div className={styles.inputLinkTwo}>
 
-        <label className={styles.label}>Link Cover</label>
+        <label className={styles.label}>Link Poster</label>
         <input
           required
           type="text"

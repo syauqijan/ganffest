@@ -12,7 +12,8 @@ import Agreement from '@/components/fragments/submission/agreement'
 import { set } from 'firebase/database'
 import PopUp from '@/components/fragments/popup'
 import Image from 'next/image'
-
+import axios from 'axios'
+import CountdownTimer from '@/components/fragments/countdown'
 
 type FormDataType = {
     judul_film: string;
@@ -107,27 +108,65 @@ type FormDataType = {
 
     setIsLoading(true);
     setShowPopup(false);
+    // console.log(data);
     const dataWithUserEmail = {
       ...data,
-      emailSubmitter: session?.user?.email || '',
+      email_submitter: session?.user?.email || '',
     };
-  
-    const result = await fetch('../api/submission', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(dataWithUserEmail),
-    });
-  
-    if (result.status === 200) {
+    // console.log(dataWithUserEmail)
+    try{
+      await axios.post('https://api.ganeshafilmfestival.com/submissions', {
+        judul_film: dataWithUserEmail.judul_film,
+        bahasa: dataWithUserEmail.bahasa,
+        tahun: dataWithUserEmail.tahun,
+        festival: dataWithUserEmail.festival,
+        kota: dataWithUserEmail.kota,
+        penghargaan: dataWithUserEmail.penghargaan,
+        durasi: dataWithUserEmail.durasi,
+        link_film: dataWithUserEmail.link_film,
+        link_cover: dataWithUserEmail.link_cover,
+        sinopsis: dataWithUserEmail.sinopsis,
+        suara: dataWithUserEmail.suara,
+        nama_sutradara: dataWithUserEmail.nama,
+        no_hp: dataWithUserEmail.no_hp,
+        alamat: dataWithUserEmail.alamat,
+        email: dataWithUserEmail.email,
+        kota_sutradara: dataWithUserEmail.kota_sutradara,
+        foto_sutradara: dataWithUserEmail.foto,
+        provinsi: dataWithUserEmail.provinsi,
+        biografi: dataWithUserEmail.biografi,
+        gender: dataWithUserEmail.gender,
+        nama_produksi: dataWithUserEmail.nama_produksi,
+        alamat_produksi: dataWithUserEmail.alamat_produksi,
+        no_hp_produksi: dataWithUserEmail.no_hp_produksi,
+        provinsi_produksi: dataWithUserEmail.provinsi_produksi,
+        nama_produser: dataWithUserEmail.nama_produser,
+        no_hp_produser: dataWithUserEmail.no_hp_produser,
+      });
+      setIsLoading(false);
       setFinishTitle("Submission success");
       setFinishMessage(dataWithUserEmail.judul_film + " has been submitted!")
       setShowFinishPopup(true);
-    } else {
+    }catch(error){
       setIsLoading(false);
-      setError(result.status === 400 ? "Email already exists" : "");
+      // console.log(error);
     }
+    // const result = await fetch('../api/submission', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(dataWithUserEmail),
+    // });
+  
+    // if (result.status === 200) {
+    //   setFinishTitle("Submission success");
+    //   setFinishMessage(dataWithUserEmail.judul_film + " has been submitted!")
+    //   setShowFinishPopup(true);
+    // } else {
+    //   setIsLoading(false);
+    //   setError(result.status === 400 ? "Email already exists" : "");
+    // }
   };
   
 
@@ -138,12 +177,23 @@ type FormDataType = {
   const [FinishTitle, setFinishTitle] = useState("");
   
   return (
+    
+      
+   
     <Fragment>
      <div className={styles.container}> 
      <title>
         Film Submission
       </title>
-      <form onSubmit={onSubmit} className={styles.myForm} method='POST'>
+      <div className={styles.headerForm} >
+      <h1> Calling Entry Ganesha Film Festival 2024 Resmi Ditutup!</h1>
+      </div>
+      <div className={styles.description}>
+        <p>Terima kasih atas antusiasme dan partisipasi para Sineas dalam mengikuti submisi Ganesha Film Festival 2024. Tunggu info selanjutnya di media sosial kami!</p>
+        {/* <p></p> */}
+      </div>
+      {/* <CountdownTimer/> */}
+      {/* <form onSubmit={onSubmit} className={styles.myForm} method='POST'>
         <div className={styles.headerForm}>
         <h1>FORM SUBMISSION</h1>
         </div> 
@@ -174,12 +224,12 @@ type FormDataType = {
           )}
           <button className={styles.nextbutton} type="submit">{isLastStep ? "Finish" : "Next"}</button>
         </div>
-      </form>
+      </form> */}
     </div>
-    <FilmTerms isVisible={showModal} onClose={() => setShowModal(false)}/>
+    {/* <FilmTerms isVisible={showModal} onClose={() => setShowModal(false)}/> */}
     {/* <Agreement isVisible={showPopup} onClose={() => {setShowPopup(false), submitHandler}}/> */}
-    <Agreement isVisible={showPopup} onClose={() => { setShowPopup(false); submitHandler({}); }} onBack={() => setShowPopup(false)} />
-    <PopUp isVisible={showFinishPopup} onClose={() => { setIsLoading(false);push('/');}} message={FinishMessage} messageTitle={FinishTitle}/>
+    {/* <Agreement isVisible={showPopup} onClose={() => { setShowPopup(false); submitHandler({}); }} onBack={() => setShowPopup(false)} />
+    <PopUp isVisible={showFinishPopup} onClose={() => { setIsLoading(false);push('/');}} message={FinishMessage} messageTitle={FinishTitle}/> */}
 
 
 
