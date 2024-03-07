@@ -20,8 +20,8 @@ const MainLayout = (props: MainLayoutProps) => {
           <link rel="icon" href="/gffhead.png" type="image/png"/>
         </Head>
         <div>
+        {!disableNavbars.includes(pathname) && <Navbar />}
           <main>
-            {!disableNavbars.includes(pathname) && <Navbar />}
             {children}
           
           </main>

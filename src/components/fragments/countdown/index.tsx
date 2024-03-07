@@ -1,27 +1,25 @@
-// CountdownTimer.tsx
 import React, { useEffect, useState } from 'react';
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "./CountdownTimer.module.css";
+import Styles from "./CountdownTimer.module.css";
 
 const CountdownTimer = () => {
-
   const [partyTime, setPartyTime] = useState(false);
-  const [days, setDays] = useState(0);
+  const [days, setDays] = useState<number>(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    const target = new Date('2023-10-25T00:00:00Z');
+    const target = new Date('2024-03-09T11:00:00Z');
 
     const interval = setInterval(() => {
       const now = new Date();
       const difference = target.getTime() - now.getTime();
 
       const d = Math.floor(difference / (1000 * 60 * 60 * 24));
-      setDays(d);
+      setDays(Number(d.toString().padStart(2, '0')));
 
       const h = Math.floor(
         (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -42,51 +40,43 @@ const CountdownTimer = () => {
     return () => clearInterval(interval);
   }, []);
 
-  
-
-
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Countdown Timer</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      {partyTime ? (
-        <>
-          <h1>Happy new year!</h1>
-
-        </>
-      ) : (
+    <div className='flex flex-col w-3/4 h-auto items-center justify-center text-center mt-48 mb-36 rounded-xl '>
+      <div >
+        <h1 className='text-5xl font-semibold tracking-wide '>Get ready! Let&apos;s immerse ourselves in the captivating world of cinema at </h1>
+        <h1 className='text-lime-400  animate-pulse text-5xl font-semibold tracking-wide mt-2 '>GANFFEST</h1>
+      </div>
+      {/* <div>
+        <h1 className='text-2xl'>The event will open in</h1>
         
-          <div className={styles.timer_wrapper}>
-            <div className={styles.timer_inner}>
-              <div className={styles.timer_segment}>
-                <span className={styles.time}>{days}</span>
-                <span className={styles.label}>Days</span>
-              </div>
-              <span className={styles.divider}>:</span>
-              <div className={styles.timer_segment}>
-                <span className={styles.time}>{hours}</span>
-                <span className={styles.label}>Hours</span>
-              </div>
-              <span className={styles.divider}>:</span>
-              <div className={styles.timer_segment}>
-                <span className={styles.time}>{minutes}</span>
-                <span className={styles.label}>Minutes</span>
-              </div>
-              <span className={styles.divider}>:</span>
-              <div className={styles.timer_segment}>
-                <span className={styles.time}>{seconds}</span>
-                <span className={styles.label}>Seconds</span>
-              </div>
-            </div>
-          </div>
-
+      </div> */}
+      <div className='flex flex-row gap-3 mt-10 text-center justify-center items-center line-clamp-6'>
+        {/* <div className='flex flex-col items-center justify-center'>
+          <h1 className='flex w-20 h-20 items-center justify-center text-5xl rounded-lg bg-primary font-semibold'>{days}</h1>
+          <h1 className='text-l font-bold'>Days</h1>
+        </div> */}
         
-      )}
+        <div className='flex flex-col'>
+          <h1 className='flex w-20 h-20 items-center justify-center text-5xl rounded-lg bg-primary font-semibold'>{hours}</h1>
+          <h1 className='text-l font-bold'>Hours</h1>
+        </div>
+        <div>
+          <h1 className='text-4xl  font-semibold'>:</h1>
+        </div>
+        <div className='flex flex-col'>
+          <h1 className='flex w-20 h-20 items-center justify-center text-5xl rounded-lg bg-primary font-semibold'>{minutes}</h1>
+          <h1 className='text-l font-bold'>Minutes</h1>
+        </div>
+        <div>
+          <h1 className='text-4xl font-semibold'>:</h1>
+        </div>
+        <div className='flex flex-col'>
+          <h1 className='flex w-20 h-20 items-center justify-center text-5xl rounded-lg bg-primary font-semibold'>{seconds}</h1>
+          <h1 className='text-l font-bold'>Seconds</h1>
+        </div>
     </div>
-  );
-};
+    </div>
+  )
+}
 
-export default CountdownTimer;
+export default CountdownTimer

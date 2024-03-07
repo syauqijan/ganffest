@@ -23,10 +23,7 @@ const HomepageView = () => {
           <title>
             Ganesha Film Festival
           </title>
-          {/* <div className={styles.header}>
-          <h1 className={styles.calling}>Get ready! An interesting event will open soon!</h1>
-          </div>
-          <CountdownTimer/> */}
+          <CountdownTimer/>
           <Slider/>
           <AcaraFragment/>
           <Timeline/>

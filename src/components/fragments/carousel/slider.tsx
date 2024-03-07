@@ -10,12 +10,12 @@ const Slider = () => {
       <AwesomeSlider animation="scaleOutAnimation">
         <div data-src='/c1.jpg'>
           <a
-            href="https://www.youtube.com/watch?v=qBnkCCJuz_E"
+            href="https://www.tiket.com/to-do/ganesha-film-festival"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.watchButton}
           ><p className={styles.watchYt}>
-            Watch on YouTube
+            Buy Ticket
 
           </p>
           </a>

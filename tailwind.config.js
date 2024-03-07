@@ -12,6 +12,10 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      linearGradientColors: {
+        // Definisikan variabel gradient-horizontal dengan tiga warna
+        'gradient-horizontal': ['primary', 'secondary', 'var(--quaternary)'],
+      },
     },
     colors: {
       primary: "#292629",
@@ -19,6 +23,8 @@ module.exports = {
       tertiary: "#F9F6D5",
       quaternary: "#D6E9B0",
       quinary: "#F4602C",
+      rightGradient: '#8E6ED2',
+      leftGradient: '#F4CFAE',
   },
   },
   plugins: [],
