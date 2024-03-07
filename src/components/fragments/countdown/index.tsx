@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Styles from "./CountdownTimer.module.css";
+import { Link } from 'react-router-dom';
 
 const CountdownTimer = () => {
   const [partyTime, setPartyTime] = useState(false);
@@ -41,16 +42,16 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className='flex flex-col w-3/4 h-auto items-center justify-center text-center mt-48 mb-36 rounded-xl '>
+    <div className='flex flex-col pb-24 pt-20 w-3/4 h-4/5 items-center justify-center text-center mt-40 mb-36 rounded-xl bg-gradient-to-r from-primary/30 to-secondary/30'>
       <div >
         <h1 className='text-5xl font-semibold tracking-wide '>Get ready! Let&apos;s immerse ourselves in the captivating world of cinema at </h1>
-        <h1 className='text-lime-400  animate-pulse text-5xl font-semibold tracking-wide mt-2 '>GANFFEST</h1>
+        <div className=' animate-pulse text-5xl font-semibold tracking-wide mt-2 '>GANFFEST</div>
       </div>
       {/* <div>
         <h1 className='text-2xl'>The event will open in</h1>
         
       </div> */}
-      <div className='flex flex-row gap-3 mt-10 text-center justify-center items-center line-clamp-6'>
+      <div className='flex flex-row gap-3 mt-10 text-center justify-center items-center line-clamp-6 '>
         {/* <div className='flex flex-col items-center justify-center'>
           <h1 className='flex w-20 h-20 items-center justify-center text-5xl rounded-lg bg-primary font-semibold'>{days}</h1>
           <h1 className='text-l font-bold'>Days</h1>
@@ -74,6 +75,11 @@ const CountdownTimer = () => {
           <h1 className='flex w-20 h-20 items-center justify-center text-5xl rounded-lg bg-primary font-semibold'>{seconds}</h1>
           <h1 className='text-l font-bold'>Seconds</h1>
         </div>
+    </div>
+    <div>
+      <a href='https://www.tiket.com/to-do/ganesha-film-festival' target="_blank" rel="noopener noreferrer">
+      <button className='mt-10 w-36 bg-white text-black font-semibold rounded-3xl p-3 hover:bg-black hover:text-white duration-200'>Buy Ticket</button>
+      </a>
     </div>
     </div>
   )
