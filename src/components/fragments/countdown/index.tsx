@@ -42,7 +42,7 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className='flex flex-col pb-24 pt-20 w-3/4 h-4/5 items-center justify-center text-center mt-40 mb-36 rounded-xl bg-gradient-to-r from-primary/30 to-secondary/30'>
+    <div className='flex flex-col pb-24 pt-20 w-3/4 h-4/5 items-center justify-center text-center mt-40 mb-36 rounded-xl bg-gradient-to-b from-primary/70 to-secondary/20'>
       <div >
         <h1 className='text-5xl font-semibold tracking-wide '>Get ready! Let&apos;s immerse ourselves in the captivating world of cinema at </h1>
         <div className=' animate-pulse text-5xl font-semibold tracking-wide mt-2 '>GANFFEST</div>
