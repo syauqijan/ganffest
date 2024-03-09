@@ -115,9 +115,7 @@
 }
 
 .timelineTitle{
-  font-weight: bold;
-  font-size: 40px;
-  letter-spacing: 1px;
+  display: none;
 }
 
 .eventTitle{
@@ -125,7 +123,24 @@
   font-size: 20px;
   letter-spacing: 1px;
 }
+.timeline {
+  display: none;
+}
 
+@media screen and (min-width: 700px) {
+  .timeline {
+    display: block;
+    position: relative;
+    min-height: 150px;
+  }
+  .timelineTitle{
+    display: block;
+    font-weight: bold;
+    font-size: 40px;
+    letter-spacing: 1px;
+  }
+  
+}
 @media screen and (max-width: 768px){
   .timelineTitle{
     font-weight: bold;
