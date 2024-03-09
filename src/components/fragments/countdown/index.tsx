@@ -8,36 +8,42 @@ import { Link } from 'react-router-dom';
 const CountdownTimer = () => {
   const [partyTime, setPartyTime] = useState(false);
   const [days, setDays] = useState<number>(0);
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
+  const [hours, setHours] = useState<number>(0);
+  const [minutes, setMinutes] = useState<number>(0);
+  const [seconds, setSeconds] = useState<number>(0);
 
   useEffect(() => {
-    const target = new Date('2024-03-09T11:00:00Z');
-
+    const target = new Date('2024-03-08T11:00:00Z');
+  
     const interval = setInterval(() => {
       const now = new Date();
       const difference = target.getTime() - now.getTime();
-
-      const d = Math.floor(difference / (1000 * 60 * 60 * 24));
-      setDays(Number(d.toString().padStart(2, '0')));
-
-      const h = Math.floor(
-        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      setHours(h);
-
-      const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      setMinutes(m);
-
-      const s = Math.floor((difference % (1000 * 60)) / 1000);
-      setSeconds(s);
-
-      if (d <= 0 && h <= 0 && m <= 0 && s <= 0) {
+  
+      let d, h, m, s; // Declare the variables
+      if (difference <= 0) {
+        d = days; // Assign the values to the variables
+        h = hours;
+        m = minutes;
+        s = seconds;
         setPartyTime(true);
+        clearInterval(interval); // stop the interval
+      } else {
+        const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+        setDays(Number(d.toString().padStart(2, '0')));
+
+        const h = Math.floor(
+          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        setHours(Number(h.toString().padStart(2, '0')));
+
+        const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        setMinutes(Number(m.toString().padStart(2, '0')));
+
+        const s = Math.floor((difference % (1000 * 60)) / 1000);
+        setSeconds(Number(s.toString().padStart(2, '0')));
       }
     }, 1000);
-
+  
     return () => clearInterval(interval);
   }, []);
 
@@ -58,21 +64,21 @@ const CountdownTimer = () => {
         </div> */}
         
         <div className='flex flex-col'>
-          <h1 className='flex w-20 h-20 items-center justify-center text-5xl rounded-lg bg-primary font-semibold'>{hours}</h1>
+          <h1 className='flex w-20 h-20 items-center justify-center text-5xl rounded-lg bg-primary font-semibold'>{hours.toString().padStart(2, '0')}</h1>
           <h1 className='text-l font-bold'>Hours</h1>
         </div>
         <div>
           <h1 className='text-4xl  font-semibold'>:</h1>
         </div>
         <div className='flex flex-col'>
-          <h1 className='flex w-20 h-20 items-center justify-center text-5xl rounded-lg bg-primary font-semibold'>{minutes}</h1>
+          <h1 className='flex w-20 h-20 items-center justify-center text-5xl rounded-lg bg-primary font-semibold'>{minutes.toString().padStart(2, '0')}</h1>
           <h1 className='text-l font-bold'>Minutes</h1>
         </div>
         <div>
           <h1 className='text-4xl font-semibold'>:</h1>
         </div>
         <div className='flex flex-col'>
-          <h1 className='flex w-20 h-20 items-center justify-center text-5xl rounded-lg bg-primary font-semibold'>{seconds}</h1>
+          <h1 className='flex w-20 h-20 items-center justify-center text-5xl rounded-lg bg-primary font-semibold'>{seconds.toString().padStart(2, '0')}</h1>
           <h1 className='text-l font-bold'>Seconds</h1>
         </div>
     </div>

@@ -38,7 +38,7 @@ const MainEventView = () => {
                     <div className="mt-3 sm:pe-8 ">
                         <h3 className="text-lg font-semibold text-gray-900 ">Sabtu, 9 Maret 2024</h3>
                         {/* <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Released on December 23, 2021</time> */}
-                        <p className="text-base font-normal text-gray-500 dark:text-gray-400">CO & CO Space dan </p>
+                        <p className="text-base font-normal text-gray-500 dark:text-gray-400">CO & CO Hub dan </p>
                         <p className="text-base font-normal text-gray-500 dark:text-gray-400">Sinesofia Unpar</p>
                     </div>
                 </div>
