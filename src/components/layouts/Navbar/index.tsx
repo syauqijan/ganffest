@@ -76,14 +76,14 @@ const Navbar = () => {
 
 
 
-          {/* <div className={styles.hamburger} onClick={() => toggleDropdownMobile()}>
+          <div className={styles.hamburger} onClick={() => toggleDropdownMobile()}>
             {dropdownMobileVisible ? (
               <MenuOpenIcon className={styles.hamburgerIcon} style={{ fontSize: '40px' , color:'white'}}/>
             ) : (
               <MenuIcon className={styles.hamburgerIcon} style={{ fontSize: '40px' , color:'white'}}/>
             )}
 
-          </div> */}
+          </div>
           {dropdownMobileVisible && (
                 <div className={styles.dropdownWrapMobile} onClick={() => closeDropdown()}>
                   <div className={styles.dropdownMobile}>
