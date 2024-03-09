@@ -15,7 +15,7 @@ const Slider = () => {
             rel="noopener noreferrer"
             className={styles.watchButton}
           ><p className={styles.watchYt}>
-            Watch on YouTube
+            Watch on Youtube
 
           </p>
           </a>
