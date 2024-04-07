@@ -14,6 +14,7 @@ import image2 from '../../../public/c2.jpg';
 import image3 from '../../../public/c3.jpg';
 import image4 from '../../../public/c1.jpg';
 import MainEventView from '@/components/fragments/mainevent'
+import Sponsorship from '@/components/fragments/sponsorship'
 
 
 const images = [image1, image2, image3, image4].map(image => image.src);
@@ -31,6 +32,7 @@ const HomepageView = () => {
           <MainEventView/>
 
           <Highlight/>
+          <Sponsorship/>
           {/* <Gallery images={images}/> */}
           
         </div>
