@@ -25,7 +25,7 @@ const HomepageView = () => {
           <title>
             Ganesha Film Festival
           </title>
-          <CountdownTimer/>
+          {/* <CountdownTimer/> */}
           <Slider/>
           <AcaraFragment/>
           <Timeline/>
