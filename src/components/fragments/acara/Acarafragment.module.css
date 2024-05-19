@@ -12,7 +12,11 @@
     font-size: 40px;
     font-weight: bold;
 }
+.link{
+    font-weight: bold;
+    font-style: italic;
 
+}
 .acara{
     display: flex;
     flex-direction: column;
